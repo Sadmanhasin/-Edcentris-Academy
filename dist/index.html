@@ -149,7 +149,7 @@
 </head>
 <body class="bg-surface font-body-md text-on-surface">
 <!-- Top Navigation Bar -->
-<nav class="fixed top-0 w-full z-50 shadow-[0_10px_40px_rgba(8,27,58,0.04)] bg-surface/70 backdrop-blur-xl">
+<nav class="fixed top-0 w-full z-50 shadow-[0_10px_40px_rgba(8,27,58,0.04)] bg-surface/70 backdrop-blur-xl" data-mobile-nav="">
 <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
 <a class="flex items-center gap-2" href="/">
 <img alt="Edcentris Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM0LcATs6e75yipNKb9rcY16XZ4f0tq0ttc-cQM0JXPuEfqA0ji6Q30lkr1eC-RPvq_oRXsdVEpZZAWFccDr5tKQPCLyl-Xw-acuDeTOR7usGlmMTjnaf7EDwTUPFD0uOM6YlVpL0ZgwULaB8Zofp03UMcQIQ9--szeL6gwvJPixx0ODc7CUvF8Q0tuuOZXFSK4TPYpE4fx-zdlG55pDoKKz8-fRWFS8umaZwA8j6piGXEYuOb3eDunRWiaZ7lCFxXmD0"/>
@@ -161,13 +161,26 @@
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-all duration-300" href="/premium-cohort/">Premium Cohort</a>
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-all duration-300" href="/consultation/">Consultation</a>
 </div>
-<a class="bg-primary-container text-white px-6 py-3 rounded-full font-label-md text-label-md transition-transform duration-300 active:scale-95 hover:bg-primary-container/90" href="/consultation/">
+<div class="flex items-center gap-2">
+<a class="bg-primary-container text-white px-3 sm:px-6 py-2.5 sm:py-3 rounded-full font-label-md text-[11px] sm:text-label-md whitespace-nowrap transition-transform duration-300 active:scale-95 hover:bg-primary-container/90" href="/consultation/">
                 Book Free Consultation
             </a>
+<button aria-expanded="false" aria-label="Open mobile menu" class="md:hidden w-10 h-10 rounded-full bg-white/80 border border-outline-variant/30 text-primary flex items-center justify-center" data-mobile-menu-toggle="" type="button">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+<div class="md:hidden max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-out border-t border-outline-variant/20" data-mobile-menu-panel="">
+<div class="px-margin-mobile py-4 flex flex-col gap-2 text-left">
+<a class="font-label-md text-label-md text-primary px-3 py-2 rounded-lg hover:bg-white/60 transition-colors" href="/">Home</a>
+<a class="font-label-md text-label-md text-primary px-3 py-2 rounded-lg hover:bg-white/60 transition-colors" href="/services/">Services</a>
+<a class="font-label-md text-label-md text-primary px-3 py-2 rounded-lg hover:bg-white/60 transition-colors" href="/premium-cohort/">Premium Cohort</a>
+<a class="font-label-md text-label-md text-primary px-3 py-2 rounded-lg hover:bg-white/60 transition-colors" href="/consultation/">Consultation</a>
+</div>
 </div>
 </nav>
 <!-- Hero Section -->
-<header class="relative pt-32 pb-20 md:pt-48 md:pb-section-gap overflow-hidden bg-white">
+<header class="relative pt-28 pb-14 md:pt-48 md:pb-section-gap overflow-hidden bg-white">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 <div class="z-10">
 <span class="inline-block px-4 py-1.5 rounded-full bg-secondary/10 text-secondary font-label-md text-caption uppercase tracking-widest mb-6">Global Admissions Excellence</span>
@@ -178,12 +191,38 @@
                     Personalized mentorship for admissions, scholarships, SAT preparation, essays, and visa support—all in one place for high-achieving students.
                 </p>
 <div class="flex flex-col sm:flex-row gap-4">
-<a class="bg-primary-container text-white px-8 py-4 rounded-full font-label-md text-body-md shadow-xl hover:shadow-2xl transition-all duration-300 inline-block" href="/consultation/">
+<a class="bg-primary-container text-white px-8 py-4 rounded-full font-label-md text-body-md shadow-xl hover:shadow-2xl transition-all duration-300 inline-block w-full sm:w-auto text-center" href="/consultation/">
                         Book a Free Strategy Session
                     </a>
-<button class="border border-primary-container text-primary-container px-8 py-4 rounded-full font-label-md text-body-md hover:bg-primary-container/5 transition-all duration-300">
+<button class="border border-primary-container text-primary-container px-8 py-4 rounded-full font-label-md text-body-md hover:bg-primary-container/5 transition-all duration-300 w-full sm:w-auto">
                         Explore Our Programs
                     </button>
+</div>
+<div class="relative h-[360px] mt-12 md:hidden">
+<div class="absolute top-2 left-1 glass-card p-4 rounded-2xl shadow-2xl z-30 animate-bounce transition-all duration-[3000ms]" style="animation-duration: 4s;">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-fixed text-sm">workspace_premium</span>
+</div>
+<div>
+<p class="font-label-md text-[10px] text-on-surface-variant uppercase">Full Scholarship</p>
+<p class="font-headline-md text-caption font-bold text-primary" id="hero-mobile-student-scholarship">$100k+ Awarded</p>
+</div>
+</div>
+</div>
+<div class="absolute top-14 left-1/2 -translate-x-1/2 w-56 h-72 rounded-3xl overflow-hidden shadow-2xl z-20 border-4 border-white" id="hero-mobile-student-slideshow">
+<img alt="Harvard University student portrait" class="absolute inset-0 w-full h-full object-cover" id="hero-mobile-student-image-a" src="https://i.pravatar.cc/640?img=12" style="opacity: 1; transform: translateX(0); transition: opacity 800ms cubic-bezier(0.4, 0, 0.2, 1), transform 800ms cubic-bezier(0.4, 0, 0.2, 1); will-change: opacity, transform;">
+<img alt="Harvard University student portrait" class="absolute inset-0 w-full h-full object-cover" id="hero-mobile-student-image-b" src="https://i.pravatar.cc/640?img=12" style="opacity: 0; transform: translateX(14px); transition: opacity 800ms cubic-bezier(0.4, 0, 0.2, 1), transform 800ms cubic-bezier(0.4, 0, 0.2, 1); will-change: opacity, transform;">
+</div>
+<div class="absolute bottom-2 right-1 glass-card p-4 rounded-2xl shadow-2xl z-30 animate-pulse">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-2xl">school</span>
+<div>
+<p class="font-headline-md text-caption font-bold text-primary" id="hero-mobile-student-university">Harvard University</p>
+<p class="font-label-md text-[10px] text-secondary" id="hero-mobile-student-year">Class of 2028</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="relative min-h-[500px] hidden lg:block">
@@ -228,15 +267,60 @@
                 { src: "https://i.pravatar.cc/640?img=56", university: "Whitman College", year: "Class of 2029", scholarship: "$65k Scholarship", alt: "Whitman College student portrait" }
             ];
 
-            const container = document.getElementById("hero-student-slideshow");
-            const imageA = document.getElementById("hero-student-image-a");
-            const imageB = document.getElementById("hero-student-image-b");
-            const university = document.getElementById("hero-student-university");
-            const year = document.getElementById("hero-student-year");
-            const scholarship = document.getElementById("hero-student-scholarship");
+            function initializeShowcase(prefix) {
+                const container = document.getElementById(prefix + "-student-slideshow");
+                const imageA = document.getElementById(prefix + "-student-image-a");
+                const imageB = document.getElementById(prefix + "-student-image-b");
+                const university = document.getElementById(prefix + "-student-university");
+                const year = document.getElementById(prefix + "-student-year");
+                const scholarship = document.getElementById(prefix + "-student-scholarship");
 
-            if (!container || !imageA || !imageB || !university || !year || !scholarship) {
-                return;
+                if (!container || !imageA || !imageB || !university || !year || !scholarship) {
+                    return;
+                }
+
+                let currentIndex = 0;
+                let showingA = true;
+                let paused = false;
+
+                container.addEventListener("mouseenter", function () {
+                    paused = true;
+                });
+                container.addEventListener("mouseleave", function () {
+                    paused = false;
+                });
+
+                function transitionToNextStudent() {
+                    if (paused) {
+                        return;
+                    }
+
+                    const nextIndex = (currentIndex + 1) % students.length;
+                    const nextStudent = students[nextIndex];
+                    const outgoingImage = showingA ? imageA : imageB;
+                    const incomingImage = showingA ? imageB : imageA;
+
+                    incomingImage.src = nextStudent.src;
+                    incomingImage.alt = nextStudent.alt;
+                    incomingImage.style.opacity = "0";
+                    incomingImage.style.transform = "translateX(14px)";
+
+                    university.textContent = nextStudent.university;
+                    year.textContent = nextStudent.year;
+                    scholarship.textContent = nextStudent.scholarship;
+
+                    requestAnimationFrame(function () {
+                        incomingImage.style.opacity = "1";
+                        incomingImage.style.transform = "translateX(0)";
+                        outgoingImage.style.opacity = "0";
+                        outgoingImage.style.transform = "translateX(-14px)";
+                    });
+
+                    currentIndex = nextIndex;
+                    showingA = !showingA;
+                }
+
+                setInterval(transitionToNextStudent, 3600);
             }
 
             students.forEach(function (student) {
@@ -244,48 +328,42 @@
                 preload.src = student.src;
             });
 
-            let currentIndex = 0;
-            let showingA = true;
-            let paused = false;
-
-            container.addEventListener("mouseenter", function () {
-                paused = true;
-            });
-            container.addEventListener("mouseleave", function () {
-                paused = false;
-            });
-
-            function transitionToNextStudent() {
-                if (paused) {
-                    return;
-                }
-
-                const nextIndex = (currentIndex + 1) % students.length;
-                const nextStudent = students[nextIndex];
-                const outgoingImage = showingA ? imageA : imageB;
-                const incomingImage = showingA ? imageB : imageA;
-
-                incomingImage.src = nextStudent.src;
-                incomingImage.alt = nextStudent.alt;
-                incomingImage.style.opacity = "0";
-                incomingImage.style.transform = "translateX(14px)";
-
-                university.textContent = nextStudent.university;
-                year.textContent = nextStudent.year;
-                scholarship.textContent = nextStudent.scholarship;
-
-                requestAnimationFrame(function () {
-                    incomingImage.style.opacity = "1";
-                    incomingImage.style.transform = "translateX(0)";
-                    outgoingImage.style.opacity = "0";
-                    outgoingImage.style.transform = "translateX(-14px)";
-                });
-
-                currentIndex = nextIndex;
-                showingA = !showingA;
+            initializeShowcase("hero");
+            initializeShowcase("hero-mobile");
+        })();
+    </script>
+<script>
+        (function () {
+            const nav = document.querySelector("[data-mobile-nav]");
+            if (!nav) {
+                return;
             }
 
-            setInterval(transitionToNextStudent, 3600);
+            const toggle = nav.querySelector("[data-mobile-menu-toggle]");
+            const panel = nav.querySelector("[data-mobile-menu-panel]");
+            if (!toggle || !panel) {
+                return;
+            }
+
+            function setOpen(open) {
+                toggle.setAttribute("aria-expanded", open ? "true" : "false");
+                panel.classList.toggle("max-h-0", !open);
+                panel.classList.toggle("opacity-0", !open);
+                panel.classList.toggle("max-h-64", open);
+                panel.classList.toggle("opacity-100", open);
+            }
+
+            setOpen(false);
+            toggle.addEventListener("click", function () {
+                const isOpen = toggle.getAttribute("aria-expanded") === "true";
+                setOpen(!isOpen);
+            });
+
+            panel.querySelectorAll("a").forEach(function (link) {
+                link.addEventListener("click", function () {
+                    setOpen(false);
+                });
+            });
         })();
     </script>
 </header>
@@ -410,14 +488,14 @@
 <!-- The Journey Timeline -->
 <section class="py-section-gap bg-primary-container text-white overflow-hidden">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-<div class="text-center mb-20">
+<div class="text-center mb-12 md:mb-20">
 <span class="font-label-md text-primary-fixed uppercase tracking-widest">Our Methodology</span>
 <h2 class="font-headline-lg text-headline-lg mt-4">The Road to Success</h2>
 </div>
 <div class="relative">
 <!-- Timeline Line (Desktop Only) -->
 <div class="hidden lg:block absolute top-10 left-0 w-full h-0.5 bg-white/20 z-0"></div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-8 gap-gutter relative z-10">
+<div class="hidden md:grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-8 gap-gutter relative z-10">
 <!-- Step 1 -->
 <div class="text-center group">
 <div class="w-20 h-20 bg-white rounded-full mx-auto flex items-center justify-center mb-6 shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:bg-secondary">
@@ -481,6 +559,49 @@
 </div>
 <h5 class="font-label-md text-label-md mb-2">USA</h5>
 <p class="text-caption text-on-primary-container">Campus Life Prep</p>
+</div>
+</div>
+<div class="md:hidden relative max-w-sm mx-auto pb-2">
+<div class="absolute left-1/2 top-0 bottom-0 w-px bg-white/30"></div>
+<div class="relative flex items-center min-h-[76px] mb-3">
+<div class="w-[44%]"></div>
+<div class="absolute left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-xl"><span class="material-symbols-outlined text-primary-container text-xl">search</span></div>
+<div class="w-[44%] ml-auto bg-white/10 rounded-2xl px-3 py-2 text-left"><h5 class="font-label-md text-caption">Discover</h5></div>
+</div>
+<div class="relative flex items-center min-h-[76px] mb-3">
+<div class="w-[44%] bg-white/10 rounded-2xl px-3 py-2 text-right"><h5 class="font-label-md text-caption">Profile</h5></div>
+<div class="absolute left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-xl"><span class="material-symbols-outlined text-primary-container text-xl">person</span></div>
+<div class="w-[44%] ml-auto"></div>
+</div>
+<div class="relative flex items-center min-h-[76px] mb-3">
+<div class="w-[44%]"></div>
+<div class="absolute left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-xl"><span class="material-symbols-outlined text-primary-container text-xl">edit_note</span></div>
+<div class="w-[44%] ml-auto bg-white/10 rounded-2xl px-3 py-2 text-left"><h5 class="font-label-md text-caption">SAT</h5></div>
+</div>
+<div class="relative flex items-center min-h-[76px] mb-3">
+<div class="w-[44%] bg-white/10 rounded-2xl px-3 py-2 text-right"><h5 class="font-label-md text-caption">Essays</h5></div>
+<div class="absolute left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-xl"><span class="material-symbols-outlined text-primary-container text-xl">history_edu</span></div>
+<div class="w-[44%] ml-auto"></div>
+</div>
+<div class="relative flex items-center min-h-[76px] mb-3">
+<div class="w-[44%]"></div>
+<div class="absolute left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-xl"><span class="material-symbols-outlined text-primary-container text-xl">send</span></div>
+<div class="w-[44%] ml-auto bg-white/10 rounded-2xl px-3 py-2 text-left"><h5 class="font-label-md text-caption">Applications</h5></div>
+</div>
+<div class="relative flex items-center min-h-[76px] mb-3">
+<div class="w-[44%] bg-white/10 rounded-2xl px-3 py-2 text-right"><h5 class="font-label-md text-caption">Scholarship</h5></div>
+<div class="absolute left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-xl"><span class="material-symbols-outlined text-primary-container text-xl">payments</span></div>
+<div class="w-[44%] ml-auto"></div>
+</div>
+<div class="relative flex items-center min-h-[76px] mb-3">
+<div class="w-[44%]"></div>
+<div class="absolute left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-xl"><span class="material-symbols-outlined text-primary-container text-xl">verified_user</span></div>
+<div class="w-[44%] ml-auto bg-white/10 rounded-2xl px-3 py-2 text-left"><h5 class="font-label-md text-caption">Visa</h5></div>
+</div>
+<div class="relative flex items-center min-h-[76px]">
+<div class="w-[44%] bg-white/10 rounded-2xl px-3 py-2 text-right"><h5 class="font-label-md text-caption">USA</h5></div>
+<div class="absolute left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-xl"><span class="material-symbols-outlined text-primary-container text-xl">flight_takeoff</span></div>
+<div class="w-[44%] ml-auto"></div>
 </div>
 </div>
 </div>
@@ -635,20 +756,20 @@
 <section class="py-section-gap bg-surface-container-lowest overflow-hidden" id="us-map-section">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
 <h2 class="font-headline-lg text-headline-lg text-primary mb-4">Our Footprint Across the US</h2>
-<p class="font-body-md text-on-surface-variant mb-16 max-w-2xl mx-auto">From the Ivy League in the Northeast to tech hubs in California, Edcentris students are everywhere.</p>
+<p class="font-body-md text-on-surface-variant mb-10 md:mb-16 max-w-2xl mx-auto">From the Ivy League in the Northeast to tech hubs in California, Edcentris students are everywhere.</p>
 <div class="flex justify-center">
-<div class="relative w-[75%] aspect-video bg-surface-container rounded-[40px] shadow-inner overflow-hidden">
+<div class="relative w-[92%] md:w-[75%] aspect-video bg-surface-container rounded-[40px] shadow-inner overflow-hidden p-2 md:p-0">
 <div class="absolute inset-0 transition-transform duration-300 ease-out origin-center" data-map-layer="">
 <div class="absolute inset-0 bg-[url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg')] bg-no-repeat bg-center opacity-10"></div>
-<div class="absolute top-[31%] left-[70%] z-20 group cursor-pointer">
-<div class="relative w-3 h-3">
+<div class="absolute top-[35%] left-[66%] md:top-[31%] md:left-[70%] z-20 group cursor-pointer">
+<button class="relative w-3 h-3 focus:outline-none" type="button">
 <span class="absolute inset-0 rounded-full bg-secondary animate-ping"></span>
 <span class="relative block w-3 h-3 rounded-full bg-secondary shadow-[0_0_0_5px_rgba(0,107,90,0.14)]"></span>
-</div>
-<div class="absolute left-4 -top-2 glass-card px-2.5 py-1 rounded-full shadow-sm whitespace-nowrap">
+</button>
+<div class="hidden md:block absolute left-4 -top-2 glass-card px-2.5 py-1 rounded-full shadow-sm whitespace-nowrap">
 <p class="font-label-md text-caption text-primary">Harvard (12)</p>
 </div>
-<div class="absolute left-4 top-4 w-44 glass-card p-3 rounded-2xl shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-30 text-left">
+<div class="absolute left-4 top-4 w-44 glass-card p-3 rounded-2xl shadow-lg opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity z-30 text-left">
 <p class="font-label-md text-caption text-primary border-b border-outline-variant/20 pb-2">Harvard University</p>
 <p class="font-label-md text-caption text-on-surface-variant pt-2">12 Students</p>
 <p class="font-label-md text-caption text-on-surface-variant mt-2">Avg Scholarship</p>
@@ -656,15 +777,15 @@
 <p class="font-label-md text-caption text-secondary mt-2">View Success →</p>
 </div>
 </div>
-<div class="absolute top-[36%] left-[64%] z-20 group cursor-pointer">
-<div class="relative w-3 h-3">
+<div class="absolute top-[44%] left-[60%] md:top-[36%] md:left-[64%] z-20 group cursor-pointer">
+<button class="relative w-3 h-3 focus:outline-none" type="button">
 <span class="absolute inset-0 rounded-full bg-primary-container animate-ping" style="animation-delay: 0.4s;"></span>
 <span class="relative block w-3 h-3 rounded-full bg-primary-container shadow-[0_0_0_5px_rgba(8,27,58,0.14)]"></span>
-</div>
-<div class="absolute right-4 -top-2 glass-card px-2.5 py-1 rounded-full shadow-sm whitespace-nowrap">
+</button>
+<div class="hidden md:block absolute right-4 -top-2 glass-card px-2.5 py-1 rounded-full shadow-sm whitespace-nowrap">
 <p class="font-label-md text-caption text-primary">Rochester (18)</p>
 </div>
-<div class="absolute right-4 top-4 w-44 glass-card p-3 rounded-2xl shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-30 text-left">
+<div class="absolute right-4 top-4 w-44 glass-card p-3 rounded-2xl shadow-lg opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity z-30 text-left">
 <p class="font-label-md text-caption text-primary border-b border-outline-variant/20 pb-2">University of Rochester</p>
 <p class="font-label-md text-caption text-on-surface-variant pt-2">18 Students</p>
 <p class="font-label-md text-caption text-on-surface-variant mt-2">Avg Scholarship</p>
@@ -672,15 +793,15 @@
 <p class="font-label-md text-caption text-secondary mt-2">View Success →</p>
 </div>
 </div>
-<div class="absolute top-[42%] left-[73%] z-20 group cursor-pointer">
-<div class="relative w-3 h-3">
+<div class="absolute top-[46%] left-[74%] md:top-[42%] md:left-[73%] z-20 group cursor-pointer">
+<button class="relative w-3 h-3 focus:outline-none" type="button">
 <span class="absolute inset-0 rounded-full bg-secondary animate-ping" style="animation-delay: 0.8s;"></span>
 <span class="relative block w-3 h-3 rounded-full bg-secondary shadow-[0_0_0_5px_rgba(0,107,90,0.14)]"></span>
-</div>
-<div class="absolute left-4 -top-2 glass-card px-2.5 py-1 rounded-full shadow-sm whitespace-nowrap">
+</button>
+<div class="hidden md:block absolute left-4 -top-2 glass-card px-2.5 py-1 rounded-full shadow-sm whitespace-nowrap">
 <p class="font-label-md text-caption text-primary">Colgate (9)</p>
 </div>
-<div class="absolute left-4 top-4 w-44 glass-card p-3 rounded-2xl shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-30 text-left">
+<div class="absolute left-4 top-4 w-44 glass-card p-3 rounded-2xl shadow-lg opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity z-30 text-left">
 <p class="font-label-md text-caption text-primary border-b border-outline-variant/20 pb-2">Colgate University</p>
 <p class="font-label-md text-caption text-on-surface-variant pt-2">9 Students</p>
 <p class="font-label-md text-caption text-on-surface-variant mt-2">Avg Scholarship</p>
@@ -688,15 +809,15 @@
 <p class="font-label-md text-caption text-secondary mt-2">View Success →</p>
 </div>
 </div>
-<div class="absolute top-[48%] left-[67%] z-20 group cursor-pointer">
-<div class="relative w-3 h-3">
+<div class="absolute top-[56%] left-[66%] md:top-[48%] md:left-[67%] z-20 group cursor-pointer">
+<button class="relative w-3 h-3 focus:outline-none" type="button">
 <span class="absolute inset-0 rounded-full bg-primary-container animate-ping" style="animation-delay: 1.2s;"></span>
 <span class="relative block w-3 h-3 rounded-full bg-primary-container shadow-[0_0_0_5px_rgba(8,27,58,0.14)]"></span>
-</div>
-<div class="absolute right-4 -top-2 glass-card px-2.5 py-1 rounded-full shadow-sm whitespace-nowrap">
+</button>
+<div class="hidden md:block absolute right-4 -top-2 glass-card px-2.5 py-1 rounded-full shadow-sm whitespace-nowrap">
 <p class="font-label-md text-caption text-primary">Bucknell (7)</p>
 </div>
-<div class="absolute right-4 top-4 w-44 glass-card p-3 rounded-2xl shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-30 text-left">
+<div class="absolute right-4 top-4 w-44 glass-card p-3 rounded-2xl shadow-lg opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity z-30 text-left">
 <p class="font-label-md text-caption text-primary border-b border-outline-variant/20 pb-2">Bucknell University</p>
 <p class="font-label-md text-caption text-on-surface-variant pt-2">7 Students</p>
 <p class="font-label-md text-caption text-on-surface-variant mt-2">Avg Scholarship</p>
@@ -704,15 +825,15 @@
 <p class="font-label-md text-caption text-secondary mt-2">View Success →</p>
 </div>
 </div>
-<div class="absolute top-[55%] left-[60%] z-20 group cursor-pointer">
-<div class="relative w-3 h-3">
+<div class="absolute top-[64%] left-[56%] md:top-[55%] md:left-[60%] z-20 group cursor-pointer">
+<button class="relative w-3 h-3 focus:outline-none" type="button">
 <span class="absolute inset-0 rounded-full bg-secondary animate-ping" style="animation-delay: 1.6s;"></span>
 <span class="relative block w-3 h-3 rounded-full bg-secondary shadow-[0_0_0_5px_rgba(0,107,90,0.14)]"></span>
-</div>
-<div class="absolute left-4 -top-2 glass-card px-2.5 py-1 rounded-full shadow-sm whitespace-nowrap">
+</button>
+<div class="hidden md:block absolute left-4 -top-2 glass-card px-2.5 py-1 rounded-full shadow-sm whitespace-nowrap">
 <p class="font-label-md text-caption text-primary">Denison (6)</p>
 </div>
-<div class="absolute left-4 top-4 w-44 glass-card p-3 rounded-2xl shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-30 text-left">
+<div class="absolute left-4 top-4 w-44 glass-card p-3 rounded-2xl shadow-lg opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity z-30 text-left">
 <p class="font-label-md text-caption text-primary border-b border-outline-variant/20 pb-2">Denison University</p>
 <p class="font-label-md text-caption text-on-surface-variant pt-2">6 Students</p>
 <p class="font-label-md text-caption text-on-surface-variant mt-2">Avg Scholarship</p>
