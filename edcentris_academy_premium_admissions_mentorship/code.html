@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edcentris Academy | Ivy League Admissions Consulting</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#d8e2ff",
+                        "primary-container": "#081b3a",
+                        "surface-dim": "#d8dadc",
+                        "surface-bright": "#f7f9fb",
+                        "on-tertiary-fixed-variant": "#005227",
+                        "tertiary-container": "#00210c",
+                        "tertiary": "#000000",
+                        "on-tertiary-container": "#08984e",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#4e5e81",
+                        "secondary": "#006b5a",
+                        "on-primary-fixed-variant": "#364768",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-container-high": "#e6e8ea",
+                        "on-background": "#191c1e",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#00201a",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#00210c",
+                        "on-primary-container": "#7484a9",
+                        "surface-container": "#eceef0",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#83fba5",
+                        "outline": "#75777f",
+                        "secondary-container": "#6bf6d7",
+                        "surface-variant": "#e0e3e5",
+                        "inverse-on-surface": "#eff1f3",
+                        "primary-fixed-dim": "#b6c6ee",
+                        "primary": "#000002",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "surface": "#f7f9fb",
+                        "background": "#f7f9fb",
+                        "on-surface": "#191c1e",
+                        "surface-container-low": "#f2f4f6",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#66dd8b",
+                        "secondary-fixed-dim": "#4ddcbe",
+                        "inverse-primary": "#b6c6ee",
+                        "secondary-fixed": "#6ef9da",
+                        "outline-variant": "#c5c6cf",
+                        "on-surface-variant": "#44474e",
+                        "on-secondary-fixed-variant": "#005143",
+                        "on-secondary-container": "#00705e",
+                        "on-primary-fixed": "#081b3a",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "section-gap": "120px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-mobile": "20px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Manrope"],
+                        "label-md": ["Manrope"],
+                        "headline-lg": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "caption": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "headline-lg-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .bento-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(8, 27, 58, 0.08);
+        }
+        .marquee-container {
+            display: flex;
+            overflow: hidden;
+            user-select: none;
+            gap: 4rem;
+        }
+        .marquee-content {
+            flex-shrink: 0;
+            display: flex;
+            justify-content: space-around;
+            gap: 4rem;
+            min-width: 100%;
+            animation: scroll 40s linear infinite;
+        }
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100%); }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .journey-step::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            width: 100%;
+            height: 2px;
+            background: #e6e8ea;
+            z-index: -1;
+        }
+        .journey-step:last-child::after { display: none; }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 shadow-[0_10px_40px_rgba(8,27,58,0.04)] bg-surface/70 backdrop-blur-xl">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<img alt="Edcentris Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM0LcATs6e75yipNKb9rcY16XZ4f0tq0ttc-cQM0JXPuEfqA0ji6Q30lkr1eC-RPvq_oRXsdVEpZZAWFccDr5tKQPCLyl-Xw-acuDeTOR7usGlmMTjnaf7EDwTUPFD0uOM6YlVpL0ZgwULaB8Zofp03UMcQIQ9--szeL6gwvJPixx0ODc7CUvF8Q0tuuOZXFSK4TPYpE4fx-zdlG55pDoKKz8-fRWFS8umaZwA8j6piGXEYuOb3eDunRWiaZ7lCFxXmD0"/>
+<span class="font-headline-md text-headline-md font-bold text-primary">Edcentris</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-secondary font-bold border-b-2 border-secondary transition-all duration-300" href="#">Programs</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-all duration-300" href="#">Success Stories</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-all duration-300" href="#">Faculty</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-all duration-300" href="#">Admissions</a>
+</div>
+<button class="bg-primary-container text-white px-6 py-3 rounded-full font-label-md text-label-md transition-transform duration-300 active:scale-95 hover:bg-primary-container/90">
+                Book Free Consultation
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative pt-32 pb-20 md:pt-48 md:pb-section-gap overflow-hidden bg-white">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="z-10">
+<span class="inline-block px-4 py-1.5 rounded-full bg-secondary/10 text-secondary font-label-md text-caption uppercase tracking-widest mb-6">Global Admissions Excellence</span>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary-container mb-6">
+                    Your Journey to America's Top Universities Starts Here.
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">
+                    Personalized mentorship for admissions, scholarships, SAT preparation, essays, and visa support—all in one place for high-achieving students.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary-container text-white px-8 py-4 rounded-full font-label-md text-body-md shadow-xl hover:shadow-2xl transition-all duration-300">
+                        Book a Free Strategy Session
+                    </button>
+<button class="border border-primary-container text-primary-container px-8 py-4 rounded-full font-label-md text-body-md hover:bg-primary-container/5 transition-all duration-300">
+                        Explore Our Programs
+                    </button>
+</div>
+</div>
+<div class="relative min-h-[500px] hidden lg:block">
+<!-- Floating Glassmorphic Cards -->
+<div class="absolute top-10 left-0 glass-card p-6 rounded-2xl shadow-2xl z-30 animate-bounce transition-all duration-[3000ms]" style="animation-duration: 4s;">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-fixed">workspace_premium</span>
+</div>
+<div>
+<p class="font-label-md text-caption text-on-surface-variant uppercase">Full Scholarship</p>
+<p class="font-headline-md text-body-lg font-bold text-primary">$100k+ Awarded</p>
+</div>
+</div>
+</div>
+<div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-80 h-96 rounded-3xl overflow-hidden shadow-2xl z-20 border-4 border-white">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a confident young Bangladeshi student smiling, wearing a smart casual blazer, standing against a clean, soft white background. The lighting is editorial and warm, signifying academic success and leadership potential. The high-resolution image captures a sense of elite intellectual capability and friendliness, perfectly suited for a premium educational consultancy brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyb_zfQVgmtk4ADuJHLI_4wlN0k6CAyVA8NikaWOxHjicEQVXCFJnOM0dAsiNywMA_ozJoK7lF-BfkwXPNAKy2uZEu8J9mRlWJcgM4eFfU4CmkWHaYlbMvfqHL5YkCIT67rtrS46y8VPhFLarNvtshqcYw6MCU_oWfI_5SFJlnAx5xeprAQ1q-hT8a9OHHC626OqleqCM33QfVtFq4qvbVLM-Kz0LP_cP55fKDeWT9AfpGiI9VW_3Qgw"/>
+</div>
+<div class="absolute bottom-10 right-0 glass-card p-6 rounded-2xl shadow-2xl z-30 animate-pulse">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary text-4xl">school</span>
+<div>
+<p class="font-headline-md text-body-lg font-bold text-primary">Harvard University</p>
+<p class="font-label-md text-caption text-secondary">Class of 2028</p>
+</div>
+</div>
+</div>
+<!-- Background Decoration -->
+<div class="absolute -top-20 -right-20 w-80 h-80 bg-primary-fixed/30 rounded-full blur-3xl -z-10"></div>
+<div class="absolute -bottom-20 left-0 w-64 h-64 bg-secondary-fixed/20 rounded-full blur-3xl -z-10"></div>
+</div>
+</div>
+</header>
+<!-- Social Proof Bar -->
+<section class="bg-surface-container-low py-12 border-y border-outline-variant/30">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 text-center">
+<div>
+<h3 class="font-display-lg text-headline-lg text-secondary">300+</h3>
+<p class="font-label-md text-on-surface-variant uppercase tracking-wider">Ivy Acceptances</p>
+</div>
+<div>
+<h3 class="font-display-lg text-headline-lg text-secondary">$100M+</h3>
+<p class="font-label-md text-on-surface-variant uppercase tracking-wider">Scholarships Secured</p>
+</div>
+<div>
+<h3 class="font-display-lg text-headline-lg text-secondary">100%</h3>
+<p class="font-label-md text-on-surface-variant uppercase tracking-wider">Visa Success Rate</p>
+</div>
+<div>
+<h3 class="font-display-lg text-headline-lg text-secondary">1550+</h3>
+<p class="font-label-md text-on-surface-variant uppercase tracking-wider">Avg. SAT Score</p>
+</div>
+</div>
+<!-- University Logo Marquee -->
+<div class="marquee-container opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="marquee-content">
+<span class="font-headline-md text-headline-md text-on-surface-variant">HARVARD</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant">MIT</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant">YALE</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant">PRINCETON</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant">STANFORD</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant">COLUMBIA</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant">UPENN</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant">CORNELL</span>
+</div>
+<!-- Duplicate for seamless scroll -->
+<div aria-hidden="true" class="marquee-content">
+<span class="font-headline-md text-headline-md text-on-surface-variant">HARVARD</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant">MIT</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant">YALE</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant">PRINCETON</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant">STANFORD</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant">COLUMBIA</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant">UPENN</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant">CORNELL</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Success Stories -->
+<section class="py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex justify-between items-end mb-16">
+<div class="max-w-2xl">
+<span class="font-label-md text-secondary uppercase tracking-widest">Our Alumni</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mt-2">Where Bangladesh’s Brightest Minds Are Thriving</h2>
+</div>
+<button class="hidden md:flex items-center gap-2 text-primary font-label-md group">
+                    View All Stories 
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Story Card 1 -->
+<div class="bento-card group bg-white rounded-3xl overflow-hidden border border-outline-variant/30">
+<div class="relative h-72 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A portrait of a female student from Bangladesh wearing traditional yet modern attire, standing in front of the iconic Low Memorial Library at Columbia University. She is holding a classic leather satchel, her expression one of immense pride and fulfillment. The lighting is crisp, afternoon sun, highlighting the architectural details of the campus behind her. The overall aesthetic is one of academic achievement and cultural fusion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOmTgqk5AIRAFroO-gJxUFpxQ72HpUsGBb8gk0TlMrKEwfWY_FCeAJEsrR-s9Gx1pInyoSofNKAi8KJpHKpbeuY-kXF_Q70g7P9B__Fx5xlmDrybdsHbMvglHgu8yLGVj4pkaHa_14PIJpTU0aqXnt9sjU3oTkUNifOi7pEIVfBewNQQTJ1glJ_tuOVQUA9AkmkXt4ju0PzaiaL--siDNmCiFGeBMuLzSmTCN8uZ5pCvFSFQemNwZAJQ"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full flex items-center gap-1 border border-secondary/20">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-label-md text-caption text-secondary">Full Ride</span>
+</div>
+</div>
+<div class="p-8">
+<p class="font-label-md text-caption text-secondary mb-2">COLUMBIA UNIVERSITY '27</p>
+<h4 class="font-headline-md text-body-lg font-bold mb-4">Adnan Chowdhury</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">"Edcentris didn't just help with my essays; they helped me find my voice. I never thought an Ivy League education was possible from Dhaka."</p>
+<div class="flex items-center gap-3 pt-6 border-t border-outline-variant/20">
+<div class="px-3 py-1 bg-tertiary-fixed/30 rounded text-on-tertiary-fixed-variant text-caption font-bold">$320,000 Scholarship</div>
+</div>
+</div>
+</div>
+<!-- Story Card 2 -->
+<div class="bento-card group bg-white rounded-3xl overflow-hidden border border-outline-variant/30">
+<div class="relative h-72 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A bright, energetic photograph of a male student standing in the MIT Infinite Corridor, wearing an MIT MIT sweatshirt. He looks enthusiastic and intellectual, gesturing as if explaining a complex idea. The background shows a flurry of campus life with soft focus, creating a dynamic academic atmosphere. The lighting is cool-toned, representing the technical and innovative spirit of the university, while maintaining the brand's premium, high-quality look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEQIVeKu3bbP0XAuc2QRfQ16lqE8ewmSBBAOTkdBMibEuXAjrsuqj3hWobaZHEQwMJM7c-412MhHUrAITeAnWbhj8IuPs8OsFCagO5erXTq6uoV3DSh6WsMkgdOS_KJf7LkYzE4rlMlSZVkKMiz7fHItPAuGZ3EabibkdJ56675J684ns7KSF7zXqJruSyT-2Nt_CC7D1F5UR1HSEgyv9ufpbYiZfhXHC6Odq0xX-g4uLKihkzdVJjsA"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full flex items-center gap-1 border border-secondary/20">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-label-md text-caption text-secondary">QuestBridge Scholar</span>
+</div>
+</div>
+<div class="p-8">
+<p class="font-label-md text-caption text-secondary mb-2">MIT '28</p>
+<h4 class="font-headline-md text-body-lg font-bold mb-4">Zarin Tasnim</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">"The SAT prep here is unparalleled. My score jumped 200 points in 3 months, making me competitive for top engineering programs."</p>
+<div class="flex items-center gap-3 pt-6 border-t border-outline-variant/20">
+<div class="px-3 py-1 bg-tertiary-fixed/30 rounded text-on-tertiary-fixed-variant text-caption font-bold">$280,000 Scholarship</div>
+</div>
+</div>
+</div>
+<!-- Story Card 3 -->
+<div class="bento-card group bg-white rounded-3xl overflow-hidden border border-outline-variant/30">
+<div class="relative h-72 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A cinematic, wide-angle shot of a student sitting on the grass at Yale University’s Old Campus, surrounded by gothic architecture and vibrant autumn leaves. The student is engrossed in a thick academic book, representing deep scholarship and peace. The image is bathed in golden hour light, creating a warm, prestigious, and aspirational mood that aligns with the 'New Ivy' design philosophy of the Edcentris brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsgrTnCh-RmtinHNyM23S5pScM11t_Qg4w169pPE2RCEUNEtJ_r3QLr55iPO67Z1MMsfIQa6RjAENBaXZGlAFn_smvuiV9frgCck4riRVPFXFmGolQJmHnqEVE9Hp3POVmBRxb2p4ybblcThz1wlIkd00M0I62oyqoG2A486m4eITyQNP6ALvsjNt91ze_S9Z9ayCh83-1DWYoMUJzxm1zgmGI_n6HawIvTG2xObmhHxflOioEUmVLfA"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full flex items-center gap-1 border border-secondary/20">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-label-md text-caption text-secondary">Pre-Law</span>
+</div>
+</div>
+<div class="p-8">
+<p class="font-label-md text-caption text-secondary mb-2">YALE UNIVERSITY '28</p>
+<h4 class="font-headline-md text-body-lg font-bold mb-4">Tahmid Rahman</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">"The visa process was my biggest fear. Edcentris handled everything with such precision that I felt confident at every step."</p>
+<div class="flex items-center gap-3 pt-6 border-t border-outline-variant/20">
+<div class="px-3 py-1 bg-tertiary-fixed/30 rounded text-on-tertiary-fixed-variant text-caption font-bold">$305,000 Scholarship</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Journey Timeline -->
+<section class="py-section-gap bg-primary-container text-white overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-20">
+<span class="font-label-md text-primary-fixed uppercase tracking-widest">Our Methodology</span>
+<h2 class="font-headline-lg text-headline-lg mt-4">The Road to Success</h2>
+</div>
+<div class="relative">
+<!-- Timeline Line (Desktop Only) -->
+<div class="hidden lg:block absolute top-10 left-0 w-full h-0.5 bg-white/20 z-0"></div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-8 gap-gutter relative z-10">
+<!-- Step 1 -->
+<div class="text-center group">
+<div class="w-20 h-20 bg-white rounded-full mx-auto flex items-center justify-center mb-6 shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:bg-secondary">
+<span class="material-symbols-outlined text-primary-container group-hover:text-white text-3xl">search</span>
+</div>
+<h5 class="font-label-md text-label-md mb-2">Discover</h5>
+<p class="text-caption text-on-primary-container">Initial Strategy Consultation</p>
+</div>
+<!-- Step 2 -->
+<div class="text-center group">
+<div class="w-20 h-20 bg-white rounded-full mx-auto flex items-center justify-center mb-6 shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:bg-secondary">
+<span class="material-symbols-outlined text-primary-container group-hover:text-white text-3xl">person</span>
+</div>
+<h5 class="font-label-md text-label-md mb-2">Profile</h5>
+<p class="text-caption text-on-primary-container">Strategic Profile Building</p>
+</div>
+<!-- Step 3 -->
+<div class="text-center group">
+<div class="w-20 h-20 bg-white rounded-full mx-auto flex items-center justify-center mb-6 shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:bg-secondary">
+<span class="material-symbols-outlined text-primary-container group-hover:text-white text-3xl">edit_note</span>
+</div>
+<h5 class="font-label-md text-label-md mb-2">SAT</h5>
+<p class="text-caption text-on-primary-container">Mastering Standardized Tests</p>
+</div>
+<!-- Step 4 -->
+<div class="text-center group">
+<div class="w-20 h-20 bg-white rounded-full mx-auto flex items-center justify-center mb-6 shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:bg-secondary">
+<span class="material-symbols-outlined text-primary-container group-hover:text-white text-3xl">history_edu</span>
+</div>
+<h5 class="font-label-md text-label-md mb-2">Essays</h5>
+<p class="text-caption text-on-primary-container">Compelling Narratives</p>
+</div>
+<!-- Step 5 -->
+<div class="text-center group">
+<div class="w-20 h-20 bg-white rounded-full mx-auto flex items-center justify-center mb-6 shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:bg-secondary">
+<span class="material-symbols-outlined text-primary-container group-hover:text-white text-3xl">send</span>
+</div>
+<h5 class="font-label-md text-label-md mb-2">Apps</h5>
+<p class="text-caption text-on-primary-container">Flawless Submissions</p>
+</div>
+<!-- Step 6 -->
+<div class="text-center group">
+<div class="w-20 h-20 bg-white rounded-full mx-auto flex items-center justify-center mb-6 shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:bg-secondary">
+<span class="material-symbols-outlined text-primary-container group-hover:text-white text-3xl">payments</span>
+</div>
+<h5 class="font-label-md text-label-md mb-2">Aid</h5>
+<p class="text-caption text-on-primary-container">Financial Aid &amp; Scholarship</p>
+</div>
+<!-- Step 7 -->
+<div class="text-center group">
+<div class="w-20 h-20 bg-white rounded-full mx-auto flex items-center justify-center mb-6 shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:bg-secondary">
+<span class="material-symbols-outlined text-primary-container group-hover:text-white text-3xl">verified_user</span>
+</div>
+<h5 class="font-label-md text-label-md mb-2">Visa</h5>
+<p class="text-caption text-on-primary-container">Expert Documentation Support</p>
+</div>
+<!-- Step 8 -->
+<div class="text-center group">
+<div class="w-20 h-20 bg-white rounded-full mx-auto flex items-center justify-center mb-6 shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:bg-secondary">
+<span class="material-symbols-outlined text-primary-container group-hover:text-white text-3xl">flight_takeoff</span>
+</div>
+<h5 class="font-label-md text-label-md mb-2">USA</h5>
+<p class="text-caption text-on-primary-container">Campus Life Prep</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Bento Grid -->
+<section class="py-section-gap bg-surface">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary">Everything You Need to Succeed</h2>
+<p class="font-body-md text-on-surface-variant max-w-xl mx-auto mt-4">A comprehensive suite of services tailored for the ambitious student.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- SAT Prep -->
+<div class="md:col-span-8 bento-card bg-white p-10 rounded-[32px] border border-outline-variant/30 flex flex-col md:flex-row items-center gap-10">
+<div class="md:w-1/2">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-2xl">menu_book</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Master Standardized Testing</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Exclusive access to adaptive learning platforms, 24/7 mentor support, and personalized drills that target your specific weaknesses.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-2 font-label-md text-body-md text-primary">
+<span class="material-symbols-outlined text-secondary">check_circle</span> SAT, ACT, &amp; Digital SAT Specialists
+                            </li>
+<li class="flex items-center gap-2 font-label-md text-body-md text-primary">
+<span class="material-symbols-outlined text-secondary">check_circle</span> Unlimited Full-length Mock Exams
+                            </li>
+</ul>
+</div>
+<div class="md:w-1/2 rounded-2xl overflow-hidden h-64 md:h-full bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist desktop setup featuring a sleek laptop, a focused student's hands taking notes in a designer notebook, and a stack of scholarly books. The lighting is bright and airy, symbolizing clarity of thought and academic discipline. The color palette is composed of soft whites, grays, and a hint of deep navy, reflecting the Edcentris professional brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqzw9jcaBSz3JBNi2n7Tv8YlaCXf8shG_V4dtow0rHLDPBv-sDi5X1_jS3i1_kH7bW1wZ4L9zpL4HTrAAaTMxm76o6Rt-yDl8C2ogApW9Vgku_loXmcc3bEwwJyakHQwJSgJYy7tYv_ybaS2KDuegwuwr_5g66zI15kNn2Cv1ud32go-Fq6GTDbrRnkWwVjRbT1y-48SRlJAkHELEiNa3umYa8HhjBtSv6MfiyJFnpiMjksp23zSgPog"/>
+</div>
+</div>
+<!-- Essay Support -->
+<div class="md:col-span-4 bento-card bg-white p-10 rounded-[32px] border border-outline-variant/30 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-on-secondary-container text-2xl">history_edu</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Elite Essay Crafting</h3>
+<p class="font-body-md text-on-surface-variant">Transform your personal story into an irresistible narrative for top-tier admissions officers.</p>
+</div>
+<div class="mt-8 pt-8 border-t border-outline-variant/20 flex items-center justify-between">
+<span class="font-label-md text-primary">Learn more</span>
+<span class="material-symbols-outlined text-primary">north_east</span>
+</div>
+</div>
+<!-- Financial Aid -->
+<div class="md:col-span-4 bento-card bg-primary-container text-white p-10 rounded-[32px] flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-white text-2xl">monetization_on</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Financial Aid Mastery</h3>
+<p class="text-on-primary-container">We help you navigate CSS Profiles and FAFSA to maximize your scholarship potential.</p>
+</div>
+<div class="mt-10">
+<div class="flex -space-x-4 mb-4">
+<div class="w-10 h-10 rounded-full border-2 border-primary-container bg-white"></div>
+<div class="w-10 h-10 rounded-full border-2 border-primary-container bg-surface-dim"></div>
+<div class="w-10 h-10 rounded-full border-2 border-primary-container bg-primary-fixed"></div>
+<div class="w-10 h-10 rounded-full border-2 border-primary-container bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed text-caption">+25</div>
+</div>
+<p class="text-caption text-on-primary-container">25+ Full rides secured this year alone</p>
+</div>
+</div>
+<!-- Mentorship -->
+<div class="md:col-span-8 bento-card bg-white p-10 rounded-[32px] border border-outline-variant/30 grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="flex flex-col justify-center">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-on-tertiary-fixed text-2xl">groups</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">1-on-1 Mentorship</h3>
+<p class="font-body-md text-on-surface-variant">Regular strategy sessions with mentors who have actually walked the halls of the Ivy League.</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="aspect-square rounded-2xl bg-surface-container-high overflow-hidden shadow-inner">
+<img class="w-full h-full object-cover" data-alt="A macro close-up of two people in a collaborative workspace environment. One person is pointing at a high-tech tablet screen displaying college admission data and infographics. The focus is sharp on the interaction, representing personalized mentorship and strategic planning. The aesthetic is clean, professional, and sophisticated, echoing a modern office in Dhaka or a top university campus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv9QnPNWohDebLrvtYyiT3_IEgErwppCpw54V9ez-b2v0xvwnJvfUghVUXxU9XbNHzbVckRVFpOv-hNmcoX7bWJTBZvpjVnYtVHCeu0jE5XOscDHAiR2peG-h1sQ7ywnebQc2jt5n1Jk5XW07lGvafdFyBnHZfLzg9a-lCngiJG1m7Yri2XQz3Qmzj4ljXGG5KoEs3Hu19LdgM-aCiINTxWEhKX_-QgPsuCO5lYLEpsF11E8qK0sISJA"/>
+</div>
+<div class="aspect-square rounded-2xl bg-secondary/10 flex items-center justify-center p-4">
+<div class="text-center">
+<p class="font-display-lg text-headline-md text-secondary">Weekly</p>
+<p class="font-label-md text-caption text-secondary/60">Progress Checks</p>
+</div>
+</div>
+<div class="aspect-square rounded-2xl bg-primary-container/5 flex items-center justify-center p-4">
+<span class="material-symbols-outlined text-primary-container text-4xl">video_call</span>
+</div>
+<div class="aspect-square rounded-2xl bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A top-down view of a modern conference table with architectural blueprints, a luxury fountain pen, and a high-end smartphone. The scene conveys meticulous planning and high-level strategy. The lighting is cool and professional, with a focus on details that signify quality and thoroughness. The color palette matches the deep navy and white theme of Edcentris." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXWoQ9QkwIPZL21ktY15VCs2-Yz1tVm20iUhIGVedJadQKpYJGAM_e6Ayq-iihCMfkCOTfGjIQek9FN0yw5uzqR2PveMkYyJFSWvlfdm-FRlvurGs4TSkpZH_QTn3UA3ToyYKsfSWmBQbWKFZl59paIIcXb6mVWFhYg8LFVGE1fRC5RB2iBw8YWZfLwvvFh4N2XPHXcfA6TmeAhO83CeZ8ZvleI_SQ3YJNphNRd8Zp3P_bXLkoeNe86Q"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us / Two Column -->
+<section class="py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="order-2 lg:order-1 relative">
+<div class="aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl relative">
+<img class="w-full h-full object-cover" data-alt="A wide-angle, cinematic shot of a modern, high-tech classroom or consulting office. Large floor-to-ceiling windows look out onto a vibrant cityscape. Inside, students and expert mentors are engaged in collaborative, high-energy discussions around sleek white desks. The atmosphere is one of focused ambition and scholarly excellence, lit by soft natural daylight. The design reflects an elite, transformative educational environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBINpYu6MqKDvX4tESyl1lmStYvv8QeRNWuiStrTsntzSNadlYqhQg9nxteOpitXyQ5glGhYyfjvFG-i3iO_DMXQd7SmOj5mAX1ACRTwl33TjRA2IQyM3JOsLTWaxvKMoI6YvaItJHYpO8ONAoX7bxuRlmv_UhumbeCOgUC9MJ9vZa-ZRVDx0iajlTPO_mKcdI1bXGrx2fqGOMFBbqKLD8IrWqBrAuTDu2vgAyQRd6-AXV0Hy1Wn-9vxg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/40 to-transparent"></div>
+</div>
+<div class="absolute -bottom-10 -right-10 bg-white p-8 rounded-3xl shadow-2xl max-w-xs border border-outline-variant/20 hidden md:block">
+<p class="font-display-lg text-headline-md text-secondary mb-2">98%</p>
+<p class="font-label-md text-body-md text-primary font-bold">Of our students receive at least one admission offer.</p>
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<span class="font-label-md text-secondary uppercase tracking-widest">The Edcentris Advantage</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mt-4 mb-8 leading-tight">Elite Mentorship Redefined for Local Excellence</h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">psychology</span>
+</div>
+<div>
+<h4 class="font-headline-md text-body-lg font-bold mb-2">Insight-Driven Strategy</h4>
+<p class="font-body-md text-on-surface-variant">We understand the unique profile of Bangladeshi students and how to position them for US admissions committees.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">format_image_left</span>
+</div>
+<div>
+<h4 class="font-headline-md text-body-lg font-bold mb-2">Parental Transparency</h4>
+<p class="font-body-md text-on-surface-variant">Weekly progress reports and dedicated portals keep families informed at every stage of the journey.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-fixed">diversity_3</span>
+</div>
+<div>
+<h4 class="font-headline-md text-body-lg font-bold mb-2">Global Alumni Network</h4>
+<p class="font-body-md text-on-surface-variant">Gain immediate access to a community of seniors already studying in the US for peer-to-peer advice.</p>
+</div>
+</div>
+</div>
+<div class="mt-12">
+<button class="bg-primary-container text-white px-8 py-4 rounded-full font-label-md text-body-md shadow-xl hover:shadow-2xl transition-all duration-300">
+                        Book Your Consultation
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- World Map Result -->
+<section class="py-section-gap bg-surface-container-lowest overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Our Footprint Across the US</h2>
+<p class="font-body-md text-on-surface-variant mb-16 max-w-2xl mx-auto">From the Ivy League in the Northeast to tech hubs in California, Edcentris students are everywhere.</p>
+<div class="relative w-full aspect-video bg-surface-container rounded-[40px] shadow-inner flex items-center justify-center overflow-hidden">
+<!-- Map Placeholder -->
+<div class="absolute inset-0 bg-[url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg')] bg-no-repeat bg-center opacity-10" data-location="USA" style=""></div>
+<!-- Pulsing Pins (Representative) -->
+<div class="absolute top-1/4 left-1/3 group cursor-pointer">
+<div class="w-4 h-4 bg-secondary rounded-full animate-ping"></div>
+<div class="absolute inset-0 w-4 h-4 bg-secondary rounded-full"></div>
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 glass-card px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20">
+<p class="font-label-md text-caption text-primary">Stanford (12 students)</p>
+</div>
+</div>
+<div class="absolute top-1/3 left-[70%] group cursor-pointer">
+<div class="w-4 h-4 bg-primary-container rounded-full animate-ping"></div>
+<div class="absolute inset-0 w-4 h-4 bg-primary-container rounded-full"></div>
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 glass-card px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20">
+<p class="font-label-md text-caption text-primary">Ivy League Hub (85 students)</p>
+</div>
+</div>
+<div class="absolute top-1/2 left-1/2 group cursor-pointer">
+<div class="w-4 h-4 bg-secondary rounded-full animate-ping" style="animation-delay: 1s;"></div>
+<div class="absolute inset-0 w-4 h-4 bg-secondary rounded-full"></div>
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 glass-card px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20">
+<p class="font-label-md text-caption text-primary">Chicago (18 students)</p>
+</div>
+</div>
+<p class="relative z-10 font-headline-md text-headline-md text-primary/20">Interactive Admissions Map</p>
+</div>
+</div>
+</section>
+<!-- Testimonials Carousel -->
+<section class="py-section-gap bg-surface">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<span class="font-label-md text-secondary uppercase tracking-widest">Voices of Success</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mt-2">What Our Families Say</h2>
+</div>
+<div class="flex flex-col md:flex-row gap-gutter">
+<!-- Video Style Card 1 -->
+<div class="flex-1 bento-card bg-white rounded-[32px] overflow-hidden border border-outline-variant/30 group">
+<div class="relative aspect-video bg-black/10">
+<img class="w-full h-full object-cover" data-alt="A high-quality frame from a video testimonial. A father and his daughter are sitting together in a beautifully decorated Bangladeshi living room, speaking with warmth and gratitude. The lighting is soft and golden, highlighting their expressions of joy and accomplishment. A subtle 'Play' icon is centered on the image, inviting the viewer to hear their story of Ivy League success." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHBtzzsBNGYigjR08qC51sAFipwT0ZTmTJpuciwXa9e0IJJedPxsiCqrbvIPuKgxMyYXuC1W8huy3_P_UYtEfDu8Byyer6IDkUgrVGYYG6aiFaTGTerYJ6lmxeKSPuVOE0godDAtHZAC9Au9IJaFSdMfb60LcwIWjNgMwGnNCB_OmFjvQjpfEP-OAWWh-y7JmLGGMI45d8XjpwgN7zJbwfm5RQhbwNNAvURTvLfFZt8r_EzKGmOaiFKQ"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-16 h-16 rounded-full bg-white/30 backdrop-blur-md flex items-center justify-center group-hover:scale-110 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="p-8">
+<p class="font-body-md text-body-md italic text-on-surface-variant mb-6">"As parents, we were worried about the complexity of US admissions. Edcentris simplified everything and kept us updated weekly. Highly recommended!"</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of a distinguished Bangladeshi gentleman in his late 40s, dressed in a professional business suit. His face radiates pride and satisfaction. This image represents the 'Parent Trust' and 'Testimonial' section, portraying a successful father whose child has achieved top-tier university admission through Edcentris." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdPdWKaJbJRof-i402P0KNutaTNA8HobdM_x8b_Qj2wPlG6NW6NC_pbQXsZBjZS0HnX5Jd8p9EEeA_r0CIJ8xZGGPlpZGxSfkarLo3bXVldm6IqKhoKac46Tvux2BpH0iMyI_UbLx4j7Bkcv3pfay5ZEN_XfYFectcZYTZ-kPmW0ArXDxDByQJeHpYm833PGaeSkH7PB22fgn6cAh1Vt9Dm1AHb8xEa6Bgvmc66VNVHF24H22tHc9F5w"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary">Dr. Mansur Ali</p>
+<p class="text-caption text-on-surface-variant">Parent of Cornell Student</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Video Style Card 2 -->
+<div class="flex-1 bento-card bg-white rounded-[32px] overflow-hidden border border-outline-variant/30 group">
+<div class="relative aspect-video bg-black/10">
+<img class="w-full h-full object-cover" data-alt="A candid, vibrant shot of a group of four students laughing and studying together in a modern, glass-walled cafe. The scene represents the community and peer support found at Edcentris. The lighting is bright and cheerful, with focus on their natural interactions and shared ambition. The overall mood is youthful, driven, and highly aspirational." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4KutEfPZNgT4dDQupnP01WTSNynHsIjcNgxNSs3EhafZrck1P6N7ruPL6qB1zU-GKyTMKGFfB2CJOh1NmskmXmLXJBd6-S6eh8SEKn5_zFgcL5_mlTwMKmcazFjGuw0-2kw0uQX3k0rKeNTeoWIW2sL82QeutH9t1F7sflunI9I8Faos0a-oNaXGIvfcOm8yfkz7yALMhWuiJCE-fFUhFNbV4o5o9gUtNPtFOp4rm4f550_4WT2Yjfw"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-16 h-16 rounded-full bg-white/30 backdrop-blur-md flex items-center justify-center group-hover:scale-110 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="p-8">
+<p class="font-body-md text-body-md italic text-on-surface-variant mb-6">"The community here is amazing. I found study buddies and future roommates even before leaving Bangladesh. It felt like a family."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A cheerful student from Bangladesh smiling confidently, wearing a university branded hoodie. She is in a casual setting that suggests a comfortable study environment. Her expression is bright and optimistic, embodying the success and community spirit of the Edcentris Academy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK2253HrOll170Skt3U7m1nhpaCp35isTgHaXG_XBb7BBScImtoMTZK6vVF_91OZDCdkN5RbkExs9ieBWGtKM64CIt7FKU69gtB_8eQHEomRhdrXlBxBiq79dftCCE7AAYDZvGZPeA3s_WwBUGbRSh4QUzyW10v_AEsmnbfvkgIFI_Ccm9yb7smHuo9nu7384oHV7z_ftj_y6rV-DwbHHllVMeJ1Y8b1dDmiWKDYm6dv1q3yhJVSyfrA"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary">Sania Mirza</p>
+<p class="text-caption text-on-surface-variant">UPenn '28 Student</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24 bg-primary-container relative overflow-hidden">
+<!-- Background Animation Effect -->
+<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[120px] -z-0"></div>
+<div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary-fixed/5 rounded-full blur-[100px] -z-0"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center relative z-10">
+<h2 class="font-display-lg text-headline-lg-mobile md:text-headline-lg text-white mb-6">Your Dream University Is Closer Than You Think.</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container max-w-2xl mx-auto mb-12">Take the first step today with a free diagnostic test and a personalized strategy session with our expert mentors.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<button class="bg-secondary text-white px-10 py-5 rounded-full font-label-md text-body-lg shadow-2xl hover:bg-secondary/90 transition-all duration-300">
+                    Book Your Free Consultation
+                </button>
+<button class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-5 rounded-full font-label-md text-body-lg hover:bg-white/20 transition-all duration-300">
+                    Join Our Community
+                </button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-low py-section-gap w-full rounded-t-xl">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-6">
+<img alt="Edcentris" class="h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN6U4NHJlcT6NQ3pU066oXB9NZwEhQi9d9NNCb9Xo2mFhJQ9cE0kP3oBYcqt5zbuxHYZmqXROMHcarwrCFZWCGt3SBmQ46Lb-et9sxos-rEGsRCXn0Z0VLpmTD1wmxywaPOtFeAdOO8b5nhjz2-O6i9ZcKkT4h829AW_GWhKNYYjRAlX5vxoJGlcqsxQhlnBwdm1joyPg2BRTNw6HyY1myNlrJqA7-w9nljlVA16SyLW0VlliI36EyDuNkMVv03FO6yR0"/>
+<span class="font-headline-md text-headline-md font-bold text-primary">Edcentris</span>
+</div>
+<p class="text-body-md text-on-surface-variant">Bangladesh's premier gateway to the Ivy League and beyond. Elevating talent, transforming futures.</p>
+</div>
+<div>
+<h5 class="font-label-md text-primary font-bold mb-6">Programs</h5>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Ivy Strategy</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Digital SAT Prep</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Essay Intensive</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Visa Support</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-md text-primary font-bold mb-6">Resources</h5>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Success Stories</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Faculty Portal</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-md text-primary font-bold mb-6">Connect</h5>
+<div class="flex gap-4 mb-6">
+<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">groups</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">videocam</span>
+</a>
+</div>
+<p class="text-caption text-on-surface-variant">© 2024 Edcentris Academy. Ivy League Admissions Consulting. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Micro-interactions
+        document.querySelectorAll('.bento-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // Potential for JS animations
+            });
+        });
+
+        // Intersection Observer for fade-in effects
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body></html>

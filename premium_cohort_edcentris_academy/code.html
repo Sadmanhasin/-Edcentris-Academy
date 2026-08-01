@@ -1,0 +1,562 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Edcentris | Fall 2027 Premium Cohort</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#6bf6d7",
+                        "outline": "#75777f",
+                        "secondary": "#006b5a",
+                        "on-secondary-fixed-variant": "#005143",
+                        "on-tertiary-fixed": "#00210c",
+                        "secondary-fixed": "#6ef9da",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#191c1e",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#66dd8b",
+                        "primary-container": "#081b3a",
+                        "secondary-fixed-dim": "#4ddcbe",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#4e5e81",
+                        "surface-container": "#eceef0",
+                        "surface-container-highest": "#e0e3e5",
+                        "primary-fixed-dim": "#b6c6ee",
+                        "primary": "#000002",
+                        "surface-variant": "#e0e3e5",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#83fba5",
+                        "inverse-surface": "#2d3133",
+                        "outline-variant": "#c5c6cf",
+                        "primary-fixed": "#d8e2ff",
+                        "surface-dim": "#d8dadc",
+                        "on-primary-fixed-variant": "#364768",
+                        "surface-bright": "#f7f9fb",
+                        "on-tertiary-container": "#08984e",
+                        "on-background": "#191c1e",
+                        "surface": "#f7f9fb",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#44474e",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#b6c6ee",
+                        "inverse-on-surface": "#eff1f3",
+                        "background": "#f7f9fb",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#081b3a",
+                        "tertiary": "#000000",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#7484a9",
+                        "on-tertiary-fixed-variant": "#005227",
+                        "surface-container-high": "#e6e8ea",
+                        "on-secondary-container": "#00705e",
+                        "surface-container-low": "#f2f4f6",
+                        "tertiary-container": "#00210c",
+                        "on-secondary-fixed": "#00201a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "section-gap": "120px",
+                        "unit": "8px",
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "label-md": ["Manrope"],
+                        "caption": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .bento-card {
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(8, 27, 58, 0.04);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+        }
+        .bento-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(8, 27, 58, 0.08);
+        }
+        .success-border {
+            border: 1px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+        }
+        .success-border::after {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 24px;
+            background: linear-gradient(to right, #6bf6d7, #4ddcbe);
+            z-index: -1;
+            opacity: 0.3;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #006b5a;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-primary-container/70 backdrop-blur-xl border-b border-outline-variant/20 shadow-sm">
+<div class="flex justify-between items-center px-margin-desktop h-20 max-w-container-max mx-auto">
+<div class="flex items-center gap-3"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtyElCT4pT_2FvPMmg159hZlmiV6amrlDyq3rekiDP4F0Yf576uK1B16s2Is0y4I9yAceKsJBWDzmhM011wJGI6hc80HwTs1_qMMDRng1UbzmIJPrY7mTU8g8hui6mc9oG2MBRxzVQah6CXtyc5WOO9_LQX_Uvs02hncBmD5jWHSLvxhTx5X9Oi9KtteLAgFRrK50ULrIhxgEDW_XN4Q2R36zKt0Qj6s7fDZL9E37whNTaElCslgtYx-rqnIa-wnuRroY" alt="Edcentris Logo" class="h-10 w-auto"><div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Edcentris</div></div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed font-bold border-b-2 border-secondary" href="#">Programs</a>
+<a class="font-label-md text-label-md text-on-surface dark:text-on-primary-fixed-variant transition-colors hover:text-secondary" href="#">Success Stories</a>
+<a class="font-label-md text-label-md text-on-surface dark:text-on-primary-fixed-variant transition-colors hover:text-secondary" href="#">Faculty</a>
+<a class="font-label-md text-label-md text-on-surface dark:text-on-primary-fixed-variant transition-colors hover:text-secondary" href="#">Admissions</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-md transition-transform active:scale-95 hover:bg-primary/90">
+                Book Free Consultation
+            </button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center px-margin-desktop overflow-hidden py-20">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="z-10">
+<div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md mb-6 animate-fade-in">
+<span class="material-symbols-outlined text-[18px]">workspace_premium</span>
+                        ENROLLMENT OPEN FOR FALL 2027
+                    </div>
+<h1 class="font-headline-lg text-headline-lg mb-6 leading-tight">
+                        Fall 2027 Premium <br><span class="text-secondary">Cohort</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mb-10">
+                        Everything you need to get into top U.S. universities with scholarships—from SAT preparation and profile building to applications and visa guidance.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-full font-label-md shadow-lg transition-all hover:shadow-xl hover:-translate-y-1">
+                            Apply Now
+                        </button>
+<button class="border-2 border-primary text-primary px-10 py-4 rounded-full font-label-md transition-all hover:bg-primary hover:text-on-primary">
+                            Book Free Strategy Session
+                        </button>
+</div>
+<div class="mt-12 flex items-center gap-6">
+<div class="flex -space-x-3">
+<div class="w-12 h-12 rounded-full border-4 border-white bg-surface-container" data-alt="A close-up studio portrait of a diverse female student smiling with confidence, high-key lighting, soft shadows, clean minimalist background, part of an elite university branding aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDSnJ0K65z2aH6Vh0PtEwBXHuAD4zMMohEVRt_S7DjbHBSMxOUdWeKnKMxZskacCefFE1EBzdns2D0-54GQgBQrn4Fv5w7cbysb4QcdUzpxX6LKK4krpkEO_Vd48kgIfV2L8_u6bI4GLAdXe0Jde3bNQNf5MKNpVWI3PUXBG7HH3JCP-7Bw9VT5bEZeE7c_8p6CQwB811haQghNcNrKGQSUcFkanoxXjrSD-6nhgu_Wx-fvppe_jdqjpA')"></div>
+<div class="w-12 h-12 rounded-full border-4 border-white bg-surface-container" data-alt="A close-up studio portrait of a professional young male scholar in business casual attire, warm natural lighting, minimalist elite design style, high contrast, clean editorial feel." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD_dkw_E8sHOJEOAgNwDr2q7MmuKSbqunb-OVJfjZGdsWbBR6FnAVFefSzjvuwL6W_J5n71KJ6z12LUddOM9_t1GvFsWv8B2YuuTyxYEIWrLpHT22eQk-jiv0eQShot4YttLJ1mx4FMVv0zdtLYLptXB201lQCM_At-BvrAgQCWz5thOTCJBgBlEj1jjK4KkiXsEEU1k9BbItM3evEDzFhQYkSMhW95McmgA-bdBCHdHjbduESENCT52g')"></div>
+<div class="w-12 h-12 rounded-full border-4 border-white bg-surface-container" data-alt="A portrait of a smiling high-achieving student of Asian descent, bright modern lighting, professional composition, shallow depth of field, premium educational brand imagery." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDlA83hSfWpTmZOuj81R0tKXRG4HiPw5I1-cZf4Dg1xt6tiFWKq6-jnLfL5z16sFGH57P9pxJ1nHGbq8TyaoJ_e3ZaSyBq56qCSXo5PMVxNP4PBum4xekPTJPArjr-ic13p2K814Di2hM3EIyqPRsqyBj7A4xnYnFUWlDtBT6Kt_5uSdvSoRj3IiHBuU6dySQEa71n3CyqknwYuqANjiXWZ2o9ywzKBiuBWjQma8HsytacSEl3etwodOA')"></div>
+</div>
+<div>
+<p class="font-label-md text-label-md">Join 500+ Scholars</p>
+<p class="font-caption text-caption text-on-surface-variant">Applications close June 30th</p>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="absolute inset-0 -z-10 bg-gradient-to-tr from-secondary/10 to-transparent blur-3xl opacity-50 rounded-full scale-150"></div>
+<div class="bento-card p-4 relative overflow-hidden transition-all duration-700 opacity-100 translate-y-0">
+<img class="w-full h-auto rounded-xl" data-alt="A highly detailed 3D isometric illustration of a student's educational roadmap. Floating translucent UI cards showing university logos, gold scholarship badges, and a glowing path leading to a prestigious campus gate. The aesthetic is clean, technological, and premium with deep navy and soft teal accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEvqUULOigQMjx7FX6Lf6XpGpgqGbJiSmFtgp39og2Ob8ZjdzLdTlu59zsWDOhWwucHVXvMfFp4ETOvWkJROoIX7z_9KV4DR52E2FzjnFjTUeyJ-6baRNSv8-qcuAgUciZI3ztJ1pVCyQH7D5fPtd8Vii9Fk9UYkAsglU_3HcWixuYX07ncMbDabdampfd0B1_PdJv7bxCDLt1nxospOjsI4lgW-BrqOXWC6bv3EXWmZ1m4e4nP6DMMQ">
+<!-- Floating UI Elements (Simulated) -->
+<div class="absolute top-8 right-8 bg-white/90 backdrop-blur shadow-xl p-4 rounded-2xl animate-bounce" style="animation-duration: 3s">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div>
+<p class="font-caption text-[10px] uppercase tracking-wider text-on-surface-variant">Scholarship</p>
+<p class="font-label-md text-on-surface font-bold">$45,000 / Yr</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-20 bg-primary text-on-primary">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+<div>
+<h2 class="font-display-lg text-display-lg text-secondary-fixed mb-2">300+</h2>
+<p class="font-label-md uppercase tracking-widest opacity-80">Acceptances</p>
+</div>
+<div>
+<h2 class="font-display-lg text-display-lg text-secondary-fixed mb-2">$100M+</h2>
+<p class="font-label-md uppercase tracking-widest opacity-80">Scholarships</p>
+</div>
+<div>
+<h2 class="font-display-lg text-display-lg text-secondary-fixed mb-2">98%</h2>
+<p class="font-label-md uppercase tracking-widest opacity-80">Visa Success</p>
+</div>
+<div>
+<h2 class="font-display-lg text-display-lg text-secondary-fixed mb-2">Ivy</h2>
+<p class="font-label-md uppercase tracking-widest opacity-80">Mentorship</p>
+</div>
+</div>
+</section>
+<!-- Bento Grid: What's Included -->
+<section class="py-section-gap px-margin-desktop bg-surface-container-low">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-4">The Most Comprehensive <span class="text-secondary">Ecosystem</span></h2>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto">From your first mock test to stepping onto your dream campus—we manage every single detail of your journey.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- SAT Prep -->
+<div class="md:col-span-8 bento-card p-10 flex flex-col md:flex-row gap-8 items-center overflow-hidden transition-all duration-700 opacity-100 translate-y-0">
+<div class="flex-1">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">analytics</span>
+<h3 class="font-headline-md text-headline-md mb-4">Rigorous SAT Preparation</h3>
+<p class="text-on-surface-variant mb-6">Master the digital SAT with adaptive mock tests, personalized question banks, and weekly data-driven performance reviews.</p>
+<ul class="space-y-2 font-label-md">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary">check_circle</span> 1550+ Average Score Goal</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary">check_circle</span> Adaptive AI Learning Path</li>
+</ul>
+</div>
+<div class="w-full md:w-1/3 bg-surface rounded-xl p-4 border border-outline-variant/30">
+<img class="w-full rounded-lg" data-alt="A clean, minimalist UI dashboard showing a student's SAT score progression chart with teal lines, high-contrast dark theme elements, and clear typography. Modern web design aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDw94gnx-gHXWmU2D7lgQe-per5uE8tCtlcK846I3G5nV4FMyoPuluP1l-3s1QhCEcQY0cN2FAvSNhcFZwkfvyqpP00OSAIEb3eY1zmvpnd31tqGTCBx7dwRawJklDaUHu50An7-_HjZNp66xwA--aaTD9fLVljVxwbuYwDthQbgfyH5du3YULzs4VUflqHih08enM-_fkwBPhibAjz5CHvbN5e3SHyV_FFV7nt0eCwoUYIgjbVsVG4A">
+</div>
+</div>
+<!-- 1-on-1 Mentorship -->
+<div class="md:col-span-4 bento-card p-10 flex flex-col justify-between bg-primary text-on-primary transition-all duration-700 opacity-100 translate-y-0">
+<div>
+<span class="material-symbols-outlined text-secondary-fixed text-4xl mb-4">diversity_3</span>
+<h3 class="font-headline-md text-headline-md mb-4">1-on-1 Mentorship</h3>
+<p class="opacity-80">Unlimited weekly sessions with Ivy League graduates who have navigated exactly what you're facing.</p>
+</div>
+<div class="mt-8 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full border-2 border-secondary-fixed" data-alt="A professional headshot of a young female mentor wearing a blazer, minimalist background, elite academic aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDJULkn8b75cgceV0XAJHrJvLLA0id0V7vtPUJTjFRHvLKEGaXnBERyqgSeqMZPHiWjQ5V0hXZ0BHTXWu_yXCGHpI-2b7fujVztQqCgDdRkSNJMSMc-ozEJOk8y6afHTNKkbngKmtMSiecpriO3-McBs2EmcQ7MPRxjCU-e5OhWxghVuf-YGbE8be-QPtuFNsupM6YO91F1XBe_WAJqc3P_uklIpzL3Gih3ddn1RdnVTkKoYR60UqqF6Q')"></div>
+<p class="font-label-md">Matched by Personality &amp; Goals</p>
+</div>
+</div>
+<!-- College Apps -->
+<div class="md:col-span-4 bento-card p-8 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">assignment_turned_in</span>
+<h4 class="font-headline-md text-2xl mb-2">Common App Mastery</h4>
+<p class="text-on-surface-variant text-sm">Strategic positioning of your activities and honors to stand out in the applicant pool.</p>
+</div>
+<!-- Essay Editing -->
+<div class="md:col-span-4 bento-card p-8 success-border transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">edit_note</span>
+<h4 class="font-headline-md text-2xl mb-2">Essay Editing</h4>
+<p class="text-on-surface-variant text-sm">Multiple rounds of brainstorming and structural feedback by professional storytellers.</p>
+</div>
+<!-- Financial Aid -->
+<div class="md:col-span-4 bento-card p-8 transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">savings</span>
+<h4 class="font-headline-md text-2xl mb-2">Scholarship Planning</h4>
+<p class="text-on-surface-variant text-sm">Identifying and applying for institutional, state, and private funding opportunities.</p>
+</div>
+<!-- Profile Building -->
+<div class="md:col-span-6 bento-card p-10 flex items-start gap-6 transition-all duration-700 opacity-100 translate-y-0">
+<div class="p-4 bg-secondary-container/30 rounded-2xl">
+<span class="material-symbols-outlined text-secondary text-3xl">construction</span>
+</div>
+<div>
+<h4 class="font-headline-md text-2xl mb-2">Profile Building</h4>
+<p class="text-on-surface-variant">Strategic extracurricular development, research projects, and internship placements.</p>
+</div>
+</div>
+<!-- Visa Prep -->
+<div class="md:col-span-6 bento-card p-10 flex items-start gap-6 transition-all duration-700 opacity-100 translate-y-0">
+<div class="p-4 bg-secondary-container/30 rounded-2xl">
+<span class="material-symbols-outlined text-secondary text-3xl">flight_takeoff</span>
+</div>
+<div>
+<h4 class="font-headline-md text-2xl mb-2">Visa Guidance</h4>
+<p class="text-on-surface-variant">Expert mock interviews and documentation assistance to ensure seamless F-1 visa approval.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Student Journey: Interactive Timeline -->
+<section class="py-section-gap max-w-container-max mx-auto px-margin-desktop overflow-hidden">
+<h2 class="font-headline-lg text-headline-lg mb-16 text-center">Your <span class="text-secondary">Transformative</span> Journey</h2>
+<div class="relative overflow-x-auto pb-12 custom-scrollbar">
+<div class="flex gap-12 min-w-[1200px] px-8 relative">
+<!-- Connecting Line -->
+<div class="absolute top-24 left-0 right-0 h-0.5 bg-outline-variant/30 -z-10"></div>
+<!-- Journey Point -->
+<div class="w-72 flex-shrink-0 group">
+<div class="w-12 h-12 bg-white border-4 border-secondary rounded-full flex items-center justify-center mb-8 mx-auto transition-all group-hover:scale-125 group-hover:bg-secondary group-hover:text-white">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<div class="bento-card p-6 text-center h-full transition-all duration-700 opacity-100 translate-y-0">
+<p class="font-label-md text-secondary mb-2">STEP 01</p>
+<h4 class="font-headline-md text-xl mb-3">Profile Evaluation</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Deep dive into your grades, extracurriculars, and hidden potential.</p>
+</div>
+</div>
+<div class="w-72 flex-shrink-0 group">
+<div class="w-12 h-12 bg-white border-4 border-secondary rounded-full flex items-center justify-center mb-8 mx-auto transition-all group-hover:scale-125 group-hover:bg-secondary group-hover:text-white">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<div class="bento-card p-6 text-center h-full transition-all duration-700 opacity-100 translate-y-0">
+<p class="font-label-md text-secondary mb-2">STEP 02</p>
+<h4 class="font-headline-md text-xl mb-3">Academic Strategy</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Personalized SAT curriculum and grade improvement roadmap.</p>
+</div>
+</div>
+<div class="w-72 flex-shrink-0 group">
+<div class="w-12 h-12 bg-white border-4 border-secondary rounded-full flex items-center justify-center mb-8 mx-auto transition-all group-hover:scale-125 group-hover:bg-secondary group-hover:text-white">
+<span class="material-symbols-outlined">border_color</span>
+</div>
+<div class="bento-card p-6 text-center h-full transition-all duration-700 opacity-100 translate-y-0">
+<p class="font-label-md text-secondary mb-2">STEP 03</p>
+<h4 class="font-headline-md text-xl mb-3">Essay Crafting</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Refining your personal narrative through high-intensity workshops.</p>
+</div>
+</div>
+<div class="w-72 flex-shrink-0 group">
+<div class="w-12 h-12 bg-white border-4 border-secondary rounded-full flex items-center justify-center mb-8 mx-auto transition-all group-hover:scale-125 group-hover:bg-secondary group-hover:text-white">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div class="bento-card p-6 text-center h-full transition-all duration-700 opacity-100 translate-y-0">
+<p class="font-label-md text-secondary mb-2">STEP 04</p>
+<h4 class="font-headline-md text-xl mb-3">Final Applications</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Submitting 10-15 balanced applications with precision accuracy.</p>
+</div>
+</div>
+<div class="w-72 flex-shrink-0 group">
+<div class="w-12 h-12 bg-white border-4 border-secondary rounded-full flex items-center justify-center mb-8 mx-auto transition-all group-hover:scale-125 group-hover:bg-secondary group-hover:text-white">
+<span class="material-symbols-outlined">celebration</span>
+</div>
+<div class="bento-card p-6 text-center h-full transition-all duration-700 opacity-0 translate-y-10">
+<p class="font-label-md text-secondary mb-2">FINALE</p>
+<h4 class="font-headline-md text-xl mb-3">Flying to USA</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Pre-departure orientation and stepping onto your new campus.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Comparison Table -->
+<section class="py-section-gap bg-surface">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-4">Why Discerning Families Choose <span class="text-secondary">Edcentris</span></h2>
+</div>
+<div class="overflow-hidden rounded-3xl shadow-xl bg-white">
+<table class="w-full text-left">
+<thead>
+<tr class="border-b border-outline-variant/30">
+<th class="p-8 font-headline-md text-xl bg-surface-container-low">Service Feature</th>
+<th class="p-8 font-headline-md text-xl text-on-surface-variant">Traditional Agencies</th>
+<th class="p-8 font-headline-md text-xl text-secondary bg-secondary-container/10">Edcentris Academy</th>
+</tr>
+</thead>
+<tbody class="font-body-md">
+<tr class="border-b border-outline-variant/30">
+<td class="p-8 font-bold">Mentorship Model</td>
+<td class="p-8 text-on-surface-variant">Generic administrative staff</td>
+<td class="p-8 font-bold text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">check_circle</span> Ivy League Graduates
+                                </td>
+</tr>
+<tr class="border-b border-outline-variant/30">
+<td class="p-8 font-bold">Scholarship Focus</td>
+<td class="p-8 text-on-surface-variant">Secondary priority</td>
+<td class="p-8 font-bold text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">check_circle</span> Guaranteed $10k+ Identification
+                                </td>
+</tr>
+<tr class="border-b border-outline-variant/30">
+<td class="p-8 font-bold">Admissions Edge</td>
+<td class="p-8 text-on-surface-variant">Standard document processing</td>
+<td class="p-8 font-bold text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">check_circle</span> Holistic Brand Building
+                                </td>
+</tr>
+<tr>
+<td class="p-8 font-bold">Technology</td>
+<td class="p-8 text-on-surface-variant">Excel sheets and emails</td>
+<td class="p-8 font-bold text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">check_circle</span> AI-Powered Learning Hub
+                                </td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Carousel: Success Stories -->
+<section class="py-section-gap bg-primary text-on-primary overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-4 text-secondary-fixed">Real Stories, <br>Global Results</h2>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border border-secondary-fixed flex items-center justify-center hover:bg-secondary-fixed hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-secondary-fixed flex items-center justify-center hover:bg-secondary-fixed hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Success Card 1 -->
+<div class="bg-primary-container p-10 rounded-[32px] border border-outline-variant/10">
+<div class="flex gap-6 items-center mb-8">
+<div class="w-24 h-24 rounded-2xl bg-surface-container overflow-hidden" data-alt="A candid lifestyle portrait of a male student standing on a lush green university campus, wearing a Harvard hoodie, soft sunlight, warm atmospheric tones, premium scholarly look." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBIITCoiNF0Gl8VgRyOWumsiLcpw1O1520ovHmVqbynDcRKKq-40Z2LXEFMFftjJDW3E_IzWRdfxf9rxMmUhOg_17QwwT2ujACNt4_Z1vreoyC3ckCkKmCXHBvQj8_pfkAmnjCP1F1yxN1165bzqeNL7tYmqpaHr1iviwuBl7ATGOkSmlcJe72d1NuAwvuvJm8BfMWhr2yF0e9wQjPB6cQ6nd02OKPTMbtkZdQtI8ye7YtWV0FtC5XOMA')"></div>
+<div>
+<h4 class="font-headline-md text-2xl">Zayn Ahmed</h4>
+<p class="text-secondary-fixed font-label-md">Harvard University '26</p>
+<p class="text-on-primary-container text-sm">Full Ride Scholarship</p>
+</div>
+</div>
+<p class="font-body-lg italic opacity-80 mb-6 leading-relaxed">"Edcentris didn't just help with my application; they helped me discover who I was. Their mentors pushed me to dig deeper into my research projects, which ultimately became the centerpiece of my personal statement."</p>
+<div class="h-1 w-20 bg-secondary-fixed rounded-full"></div>
+</div>
+<!-- Success Card 2 -->
+<div class="bg-primary-container p-10 rounded-[32px] border border-outline-variant/10">
+<div class="flex gap-6 items-center mb-8">
+<div class="w-24 h-24 rounded-2xl bg-surface-container overflow-hidden" data-alt="A portrait of a confident female student in a campus library setting, soft bokeh background of books, high-key lighting, modern scholarly aesthetic, wearing a Stanford university crest." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAvH6ywBymjitO0fk9-jQx1J289NBeMO1xP3ZiVvIlGaHA05KTR4wIykBWb52ky8n4D32zoO0u2yzyyeGj-x-sMOZ9d9lY5KHXoFepaRT8qv-UBx-D1ailjYqTFG4SWU76nfz7yPNaowNTCKT_Ct5w6FhRKF7h_TItYN7QOUwbYJs7ISU2WUDR3jgJ8ZGPcTYBWBSR_VHJ48j-EylywbtAXHV_LtY8S7XzrXvccnZ6Uta7Spd_2hvP5BQ')"></div>
+<div>
+<h4 class="font-headline-md text-2xl">Elena Volkov</h4>
+<p class="text-secondary-fixed font-label-md">Stanford University '27</p>
+<p class="text-on-primary-container text-sm">75% Merit Scholarship</p>
+</div>
+</div>
+<p class="font-body-lg italic opacity-80 mb-6 leading-relaxed">
+                            "The SAT prep was unlike anything I've seen. The AI platform targeted my weak spots instantly. Combined with the scholarship strategy, my family saved over $180,000 in tuition costs."
+                        </p>
+<div class="h-1 w-20 bg-secondary-fixed rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-section-gap px-margin-desktop relative overflow-hidden">
+<div class="max-w-container-max mx-auto">
+<div class="bg-primary rounded-[48px] p-12 md:p-24 text-center relative overflow-hidden">
+<!-- Subtle pattern background -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#6bf6d7 1px, transparent 1px); background-size: 40px 40px;"></div>
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg text-white mb-8">
+                            Your Dream University Starts <br><span class="text-secondary-fixed">with the Right Guidance</span>
+</h2>
+<p class="font-body-lg text-white/70 max-w-2xl mx-auto mb-12">
+                            Join the Fall 2027 Premium Cohort. Limited to 50 students globally to ensure personalized attention and 100% success rate.
+                        </p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<button class="bg-secondary text-white px-12 py-5 rounded-full font-headline-md text-lg transition-transform hover:scale-105 shadow-2xl shadow-secondary/20">
+                                Start Your Application
+                            </button>
+<button class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-12 py-5 rounded-full font-headline-md text-lg transition-all hover:bg-white/20">
+                                Talk to an Advisor
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="relative w-full py-section-gap bg-surface-container-lowest dark:bg-primary-container border-t border-outline-variant/30">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<div class="flex items-center gap-3 mb-6"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBGR7BKV34xOQdJtkCeU2cYfYkWxR5Wis8TRB1GZ4vl7kAbfdOu0P3so2mtZCq_zHtbA2p97EVVLW1lJPfmfhtnFqaRT-iuIK9sZv4DxIufXYJSewOkC629EA7Qe9VYTz5pjWCmD-_e_RetFM6ifaIcyU4vLboNXmXOgIz1XQVCUq5pnCcbi7cUGihmRr5Bi3131-nflDF5xGrzwjH3PEnUOxM7PyO6pj29CqMgrgO_Bnq-r0Uby-xXmMDU-VZ24XOyTw" alt="Edcentris Logo" class="h-10 w-auto"><div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Edcentris</div></div>
+<p class="font-caption text-caption text-on-surface-variant mb-6">Empowering global scholars to reach their fullest potential at the world's most prestigious institutions.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary cursor-pointer">public</span>
+<span class="material-symbols-outlined text-secondary cursor-pointer">mail</span>
+<span class="material-symbols-outlined text-secondary cursor-pointer">chat</span>
+</div>
+</div>
+<div class="md:col-span-1">
+<h5 class="font-label-md text-on-surface mb-6 uppercase tracking-widest">Programs</h5>
+<ul class="space-y-4">
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Fall 2027 Cohort</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">SAT Mastery</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Essay Intensive</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Visa Services</a></li>
+</ul>
+</div>
+<div class="md:col-span-1">
+<h5 class="font-label-md text-on-surface mb-6 uppercase tracking-widest">Company</h5>
+<ul class="space-y-4">
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">About Us</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Success Stories</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Faculty</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Resource Library</a></li>
+</ul>
+</div>
+<div class="md:col-span-1">
+<h5 class="font-label-md text-on-surface mb-6 uppercase tracking-widest">Legal</h5>
+<ul class="space-y-4">
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-20 pt-10 border-t border-outline-variant/10 text-center">
+<p class="font-caption text-caption text-on-surface-variant">© 2024 Edcentris Consulting. All rights reserved. Built for the next generation of global scholars.</p>
+</div>
+</footer>
+<script>
+        // Smooth reveal of elements on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.bento-card').forEach(card => {
+            card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(card);
+        });
+
+        // Sticky nav background change
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+
+
+</body></html>

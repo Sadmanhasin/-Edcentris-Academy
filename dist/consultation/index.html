@@ -1,0 +1,601 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Book Free Consultation | IvyEdge</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#6bf6d7",
+                    "outline": "#75777f",
+                    "secondary": "#006b5a",
+                    "on-secondary-fixed-variant": "#005143",
+                    "on-tertiary-fixed": "#00210c",
+                    "secondary-fixed": "#6ef9da",
+                    "on-primary": "#ffffff",
+                    "on-surface": "#191c1e",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#66dd8b",
+                    "primary-container": "#081b3a",
+                    "secondary-fixed-dim": "#4ddcbe",
+                    "error": "#ba1a1a",
+                    "surface-tint": "#4e5e81",
+                    "surface-container": "#eceef0",
+                    "surface-container-highest": "#e0e3e5",
+                    "primary-fixed-dim": "#b6c6ee",
+                    "primary": "#000002",
+                    "surface-variant": "#e0e3e5",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#83fba5",
+                    "inverse-surface": "#2d3133",
+                    "outline-variant": "#c5c6cf",
+                    "primary-fixed": "#d8e2ff",
+                    "surface-dim": "#d8dadc",
+                    "on-primary-fixed-variant": "#364768",
+                    "surface-bright": "#f7f9fb",
+                    "on-tertiary-container": "#08984e",
+                    "on-background": "#191c1e",
+                    "surface": "#f7f9fb",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#44474e",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#b6c6ee",
+                    "inverse-on-surface": "#eff1f3",
+                    "background": "#f7f9fb",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#081b3a",
+                    "tertiary": "#000000",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-container": "#7484a9",
+                    "on-tertiary-fixed-variant": "#005227",
+                    "surface-container-high": "#e6e8ea",
+                    "on-secondary-container": "#00705e",
+                    "surface-container-low": "#f2f4f6",
+                    "tertiary-container": "#00210c",
+                    "on-secondary-fixed": "#00201a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "section-gap": "120px",
+                    "unit": "8px",
+                    "container-max": "1280px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Playfair Display"],
+                    "label-md": ["Manrope"],
+                    "caption": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "body-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .bento-card {
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(8, 27, 58, 0.04);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(8, 27, 58, 0.08);
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .form-input {
+            transition: all 0.2s ease-in-out;
+        }
+        .form-input:focus {
+            box-shadow: 0 0 0 4px rgba(0, 107, 90, 0.1);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .btn-hover-effect {
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-hover-effect:active {
+            transform: scale(0.95);
+        }
+        .success-border {
+            border: 1px solid rgba(0, 107, 90, 0.1);
+            position: relative;
+        }
+        .success-border::after {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 24px;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(110, 249, 218, 0.4), transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-outline-variant/20 shadow-sm transition-all duration-300">
+<div class="flex justify-between items-center px-margin-desktop h-20 max-w-container-max mx-auto">
+<a class="flex items-center gap-4" href="/"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwALjLy6wJaOgDcMzuYjWbg0AmTCAaPqWBSt9ODZcPzfRbeNZ_eDXYROlduIKRxQq9OJjPireT8AEk7nguDHTCEjQ7PvvOW8VjZFidDzS2u6yQcS7ABeYvk_6tWn2VW0EvPmXuHI1Pyj-hniKUFi0BI30jqeml--eAx29yMeMu_rNrqmfpG47uG07trwal4rjGp6V6-BGwAsz_cZuYNO5FTkGxA_jc5_BgQitKFsqYpV_MK_GpAIi8X86k54YwCB3glNk" alt="Edcentris Logo" class="h-10 w-auto"><span class="font-headline-md text-headline-md font-bold text-primary">Edcentris</span></a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface hover:text-secondary font-label-md text-label-md transition-all duration-300" href="#">Programs</a>
+<a class="text-on-surface hover:text-secondary font-label-md text-label-md transition-all duration-300" href="#">Success Stories</a>
+<a class="text-on-surface hover:text-secondary font-label-md text-label-md transition-all duration-300" href="#">Faculty</a>
+<a class="text-on-surface hover:text-secondary font-label-md text-label-md transition-all duration-300" href="#">Admissions</a>
+</div>
+<a class="bg-primary text-on-primary px-6 py-3 rounded-full font-label-md text-label-md btn-hover-effect hover:shadow-lg transition-all duration-300" href="#booking">
+                Book Free Consultation
+            </a>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative overflow-hidden py-section-gap">
+
+<div class="max-w-container-max mx-auto px-margin-desktop relative z-10 text-center">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-container/20 border border-secondary/10 text-secondary mb-8">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-label-md text-label-md">LIMITED SLOTS AVAILABLE</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary max-w-4xl mx-auto mb-6">
+                    Book Your Free Strategy Session
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
+                    Talk with an experienced admissions mentor and receive personalized guidance for your U.S. university journey.
+                </p>
+<a class="inline-flex items-center gap-2 bg-primary text-on-primary px-10 py-5 rounded-full font-label-md text-label-md btn-hover-effect hover:shadow-xl group" href="#booking">
+                    Scroll to Book
+                    <span class="material-symbols-outlined transition-transform duration-300 group-hover:translate-y-1">arrow_downward</span>
+</a>
+</div>
+</section>
+<!-- What You'll Get (Bento Grid) -->
+<section class="py-section-gap bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">What You'll Get</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">Expert insights tailored to your specific academic goals and profile strengths.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Admission Roadmap -->
+<div class="md:col-span-8 bento-card p-10 flex flex-col md:flex-row gap-8 items-center group transition-all duration-700 opacity-100 translate-y-0">
+<div class="w-full md:w-1/2">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6">map</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Admission Roadmap</h3>
+<p class="font-body-md text-on-surface-variant">A comprehensive timeline from preparation to final enrollment, ensuring no deadline is missed.</p>
+</div>
+<div class="w-full md:w-1/2 overflow-hidden rounded-2xl h-64 bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A clean, minimalist digital graphic of a structured academic roadmap or timeline, using deep navy and teal accents. The visual style is sleek and professional, resembling an editorial layout with plenty of white space and soft lighting, perfectly matching a premium education consulting brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHv7ZzqGf91U-vm_iqlR9KdABeFIc0S8SgN9lpRRNkWITR_yT0Ro1ZG574ruqPrDLnYzOpbPPos-kp6dSUQAJpzo0ujba10NPw8emKEUVwIqIIkvHLo3NagDQkEaEl-rnLlbr_ALLO3oq8JPATLTfA1TdBkwZFn4kiwjit6fedfX-bQH8-x9GB7acmF-xdWIiCBnfVLvdIJ03X2bSRDnezTkRR3Zt9CYocNlUt_QSkBcWDM3-fKc3XOA">
+</div>
+</div>
+<!-- Scholarship Strategy -->
+<div class="md:col-span-4 bento-card p-10 flex flex-col justify-between success-border transition-all duration-700 opacity-100 translate-y-0">
+<div>
+<span class="material-symbols-outlined text-secondary text-4xl mb-6">workspace_premium</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Scholarship Strategy</h3>
+<p class="font-body-md text-on-surface-variant">Identify and target financial aid opportunities that match your achievements.</p>
+</div>
+</div>
+<!-- University Recommendations -->
+<div class="md:col-span-4 bento-card p-10 flex flex-col transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6">school</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">University Recs</h3>
+<p class="font-body-md text-on-surface-variant">Curated list of 'reach', 'match', and 'safety' schools based on your criteria.</p>
+</div>
+<!-- Profile Evaluation -->
+<div class="md:col-span-4 bento-card p-10 flex flex-col bg-primary-container text-on-primary transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-secondary-fixed text-4xl mb-6">analytics</span>
+<h3 class="font-headline-md text-headline-md text-primary-fixed mb-4">Profile Evaluation</h3>
+<p class="font-body-md text-primary-fixed-dim/80">Honest feedback on your GPA, extra-curriculars, and leadership roles.</p>
+</div>
+<!-- SAT Guidance -->
+<div class="md:col-span-4 bento-card p-10 flex flex-col transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6">menu_book</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">SAT Guidance</h3>
+<p class="font-body-md text-on-surface-variant">Strategic advice on test-taking, prep timelines, and score reporting strategies.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Meet Your Mentor -->
+<section class="py-section-gap bg-surface">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
+<div class="max-w-2xl">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Meet Your Mentor</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Learn from experts who have navigated the Ivy League themselves and helped hundreds of students succeed.</p>
+</div>
+<div class="hidden md:flex gap-4">
+<button class="p-4 rounded-full border border-outline-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-4 rounded-full border border-outline-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Mentor Card 1 -->
+<div class="bento-card overflow-hidden group transition-all duration-700 opacity-100 translate-y-0">
+<div class="h-80 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A professional portrait of a male admissions mentor in business casual attire, smiling confidently in a modern, sunlit office environment with bookshelves in the background. The lighting is soft and flattering, emphasizing a trustworthy and approachable persona, consistent with an elite ivy league consulting service aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDINy00J0KBexCxGDURqRR65gBtA_5A3d6XfL7ofWRN3hjhRfF3DEx230iTOjSvy9N93SCbwJsB8jQbO9bVIIP5n04oOuXdhQVzS-uCNeYytpteZTVK699J9m66YkHKp7D0b0r_XlX10z3f80CBhWpgK-B7j5dPZMhXxb8rEWgkqNNzGBgcAz9aNOCJshW6shHLHyOmAFj4jhrEoWookWYSCNCuqC4Lrfm9grOWIU9aRFhSzFE6nIr89Q">
+<div class="absolute bottom-4 left-4">
+<span class="bg-secondary text-on-secondary px-3 py-1 rounded-full font-label-md text-caption uppercase">Harvard Alumni</span>
+</div>
+</div>
+<div class="p-8">
+<h4 class="font-headline-md text-headline-md text-primary mb-1">Dr. Julian Vance</h4>
+<p class="text-secondary font-label-md mb-4">Senior Admissions Strategist</p>
+<p class="font-body-md text-on-surface-variant mb-6 italic">"Empowering students to find their authentic voice in the competitive landscape of top-tier admissions."</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container rounded-full text-caption font-label-md">12+ Years Exp</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-caption font-label-md">STEM Specialist</span>
+</div>
+</div>
+</div>
+<!-- Mentor Card 2 -->
+<div class="bento-card overflow-hidden group transition-all duration-700 opacity-100 translate-y-0">
+<div class="h-80 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A high-end professional portrait of a female admissions mentor with a friendly and knowledgeable expression. She is seated in a sophisticated, minimalist architectural space with soft natural lighting. Her appearance is polished and authoritative, reflecting the premium quality and transformative nature of IvyEdge consulting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOuoGrqFjO7TLB9GbI5uRCBkGvsKDjQVC4QlUG9JwvN_QoQeiWRvhwA_Ef1IJiWqO1ffBb8rPDFKv8ES8TzWAeXUyOLQiTN5_SqFLK8rShMLqWvGM8IaJGD0BSGlA6Q4MiCwOYGVIKyEXxNtCaUkdIlpDdfPhAT_dSmRc0HbEd6Bj8zgfgTTODBZQGJLv8Aflcnr3JRbeVFqXeEciJ3zYeo73Bj5OezhqABKXX3xkv9H2p-K7Vs9RHMA">
+<div class="absolute bottom-4 left-4">
+<span class="bg-secondary text-on-secondary px-3 py-1 rounded-full font-label-md text-caption uppercase">Stanford Alumni</span>
+</div>
+</div>
+<div class="p-8">
+<h4 class="font-headline-md text-headline-md text-primary mb-1">Elena Moretti</h4>
+<p class="text-secondary font-label-md mb-4">Head of Scholarship Strategy</p>
+<p class="font-body-md text-on-surface-variant mb-6 italic">"Securing the financial future of bright minds through targeted and effective application planning."</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container rounded-full text-caption font-label-md">8+ Years Exp</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-caption font-label-md">Social Sciences</span>
+</div>
+</div>
+</div>
+<!-- Mentor Card 3 -->
+<div class="bento-card overflow-hidden group transition-all duration-700 opacity-100 translate-y-0">
+<div class="h-80 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A professional headshot of a younger male admissions consultant with a sharp, insightful look, wearing a tailored blazer. The background is a clean white studio with soft, diffused key lighting. The style is modern editorial, projecting a sense of precision and contemporary scholarly authority." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWS0PwBktby1oU--MQDFZCwhAThFD8lkjgkCIK5_Nzkpp4qHtNa5wp8B9VznUPcufIk9joNXTTBoifr0oFcmUy0jX6I1Egsl48fv5VAY2ZVWujYZ1vFWTeV8bh3VyWvNOAnAi_8c95ujb_6w8qr4fFWW4w1axRuWtfyH1xYMjW6S3TXGSqgVRG3eHXC58IMQv0VzdM4VYDsE6BHtz_6_slVzDQkXwmryKNgjEEcVhCrW01As-m4Mm44w">
+<div class="absolute bottom-4 left-4">
+<span class="bg-secondary text-on-secondary px-3 py-1 rounded-full font-label-md text-caption uppercase">UPenn Alumni</span>
+</div>
+</div>
+<div class="p-8">
+<h4 class="font-headline-md text-headline-md text-primary mb-1">Marcus Thorne</h4>
+<p class="text-secondary font-label-md mb-4">Profile Branding Specialist</p>
+<p class="font-body-md text-on-surface-variant mb-6 italic">"Building narratives that resonate with elite admissions committees and differentiate our candidates."</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container rounded-full text-caption font-label-md">10+ Years Exp</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-caption font-label-md">Arts &amp; Design</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Booking Section -->
+<section class="py-section-gap bg-surface-container-low scroll-mt-20" id="booking">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+<!-- Left: Reasons -->
+<div class="lg:sticky lg:top-32">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8">Secure Your Spot</h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-secondary-container/30 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div>
+<h4 class="font-headline-md text-[24px] text-primary mb-2">100% Free Consultation</h4>
+<p class="font-body-md text-on-surface-variant">No hidden fees or obligations. We want to ensure we're the right fit for your ambitions first.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-secondary-container/30 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div>
+<h4 class="font-headline-md text-[24px] text-primary mb-2">Expert-Led Session</h4>
+<p class="font-body-md text-on-surface-variant">Every call is conducted by a mentor who has personal experience with top-tier U.S. university admissions.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-secondary-container/30 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined">event_available</span>
+</div>
+<div>
+<h4 class="font-headline-md text-[24px] text-primary mb-2">Flexible Scheduling</h4>
+<p class="font-body-md text-on-surface-variant">We offer sessions across various time zones to accommodate students and families worldwide.</p>
+</div>
+</div>
+</div>
+<div class="mt-12 p-8 bg-surface border border-outline-variant rounded-3xl">
+<p class="font-body-md text-on-surface-variant italic mb-4">"The 30 minutes I spent on this call changed my entire perspective on my college list. Truly invaluable."</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest"></div>
+<div>
+<p class="font-label-md text-on-surface">Sarah K.</p>
+<p class="text-caption text-on-surface-variant">Yale Class of '27</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Form -->
+<div class="bg-surface p-10 rounded-[32px] shadow-xl border border-outline-variant/10">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-md text-on-surface mb-2">Full Name</label>
+<input class="w-full bg-surface-container-low border-0 rounded-xl px-4 py-3 form-input focus:ring-0" placeholder="John Doe" type="text">
+</div>
+<div>
+<label class="block font-label-md text-on-surface mb-2">Email Address</label>
+<input class="w-full bg-surface-container-low border-0 rounded-xl px-4 py-3 form-input focus:ring-0" placeholder="john@example.com" type="email">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-md text-on-surface mb-2">Phone Number</label>
+<input class="w-full bg-surface-container-low border-0 rounded-xl px-4 py-3 form-input focus:ring-0" placeholder="+1 (555) 000-0000" type="tel">
+</div>
+<div>
+<label class="block font-label-md text-on-surface mb-2">Current Grade</label>
+<select class="w-full bg-surface-container-low border-0 rounded-xl px-4 py-3 form-input focus:ring-0">
+<option>Grade 10</option>
+<option>Grade 11</option>
+<option>Grade 12</option>
+<option>Gap Year / Transfer</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div>
+<label class="block font-label-md text-on-surface mb-2">GPA</label>
+<input class="w-full bg-surface-container-low border-0 rounded-xl px-4 py-3 form-input focus:ring-0" placeholder="3.8/4.0" type="text">
+</div>
+<div>
+<label class="block font-label-md text-on-surface mb-2">SAT Status</label>
+<select class="w-full bg-surface-container-low border-0 rounded-xl px-4 py-3 form-input focus:ring-0">
+<option>Already Taken</option>
+<option>Planning to Take</option>
+<option>Test Optional</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-on-surface mb-2">Intake Year</label>
+<select class="w-full bg-surface-container-low border-0 rounded-xl px-4 py-3 form-input focus:ring-0">
+<option>Fall 2025</option>
+<option>Fall 2026</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-on-surface mb-2">Your Goals / Message</label>
+<textarea class="w-full bg-surface-container-low border-0 rounded-xl px-4 py-3 form-input focus:ring-0" placeholder="Tell us about your dream universities and what you're looking for..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-5 rounded-full font-label-md text-label-md hover:bg-on-surface transition-colors shadow-lg shadow-primary/10" type="submit">
+                                Book Your Free Strategy Session
+                            </button>
+<p class="text-center text-caption text-on-surface-variant">By submitting, you agree to our <a class="underline" href="#">Privacy Policy</a>.</p>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-section-gap overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Student Success Stories</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bento-card p-10 relative transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-secondary-container text-6xl absolute top-4 right-8 opacity-20">format_quote</span>
+<div class="flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-secondary fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-on-surface mb-8">"The mentorship at IvyEdge was pivotal. They didn't just help with my essays; they helped me understand what kind of scholar I wanted to be. I got into my dream school with a full ride."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest"></div>
+<div>
+<p class="font-label-md text-on-surface">James Chen</p>
+<p class="text-caption text-secondary">Princeton University '28</p>
+</div>
+</div>
+</div>
+<div class="bento-card p-10 relative transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-secondary-container text-6xl absolute top-4 right-8 opacity-20">format_quote</span>
+<div class="flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-secondary fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-on-surface mb-8">"I was lost in the scholarship application process until my session with Elena. She pointed me to three funds I didn't even know existed. Highly recommend this call to anyone."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest"></div>
+<div>
+<p class="font-label-md text-on-surface">Amara Okafor</p>
+<p class="text-caption text-secondary">Stanford University '27</p>
+</div>
+</div>
+</div>
+<div class="bento-card p-10 relative transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-secondary-container text-6xl absolute top-4 right-8 opacity-20">format_quote</span>
+<div class="flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-secondary fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-on-surface mb-8">"The profile evaluation was brutally honest but exactly what I needed. It allowed me to pivot my extracurricular focus in time for my early action apps. I'm now heading to Cornell!"</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest"></div>
+<div>
+<p class="font-label-md text-on-surface">Daniel Wu</p>
+<p class="text-caption text-secondary">Cornell University '28</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Accordion -->
+<section class="py-section-gap bg-surface-container-low">
+<div class="max-w-3xl mx-auto px-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-12 text-center">Frequently Asked Questions</h2>
+<div class="space-y-4">
+<div class="bento-card transition-all duration-700 opacity-100 translate-y-0">
+<button class="w-full flex justify-between items-center p-6 text-left" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('span:last-child').classList.toggle('rotate-180')">
+<span class="font-label-md text-on-surface">Is this consultation really 100% free?</span>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+<div class="px-6 pb-6 text-on-surface-variant font-body-md hidden">
+                            Yes, absolutely. Our goal is to understand your unique profile and see if our comprehensive programs are a good match for your needs. There is no obligation to sign up for anything during the call.
+                        </div>
+</div>
+<div class="bento-card transition-all duration-700 opacity-100 translate-y-0">
+<button class="w-full flex justify-between items-center p-6 text-left" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('span:last-child').classList.toggle('rotate-180')">
+<span class="font-label-md text-on-surface">How long does the session last?</span>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+<div class="px-6 pb-6 text-on-surface-variant font-body-md hidden">
+                            The initial strategy session typically lasts between 30 to 45 minutes, depending on the depth of your questions and your current application status.
+                        </div>
+</div>
+<div class="bento-card transition-all duration-700 opacity-100 translate-y-0">
+<button class="w-full flex justify-between items-center p-6 text-left" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('span:last-child').classList.toggle('rotate-180')">
+<span class="font-label-md text-on-surface">Can my parents participate in the call?</span>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+<div class="px-6 pb-6 text-on-surface-variant font-body-md hidden">
+                            We highly encourage parents to join. Admissions decisions are often a family journey, and having parents involved helps everyone stay aligned on goals and expectations.
+                        </div>
+</div>
+<div class="bento-card transition-all duration-700 opacity-100 translate-y-0">
+<button class="w-full flex justify-between items-center p-6 text-left" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('span:last-child').classList.toggle('rotate-180')">
+<span class="font-label-md text-on-surface">What should I prepare for the session?</span>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+<div class="px-6 pb-6 text-on-surface-variant font-body-md hidden">
+                            It's helpful if you have a rough idea of your current GPA, any standardized test scores, and a list of extracurricular activities you're involved in. Most importantly, bring your questions!
+                        </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="relative rounded-[48px] bg-primary-container overflow-hidden p-16 md:p-24 text-center">
+
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg text-on-primary mb-8 max-w-2xl mx-auto">Your Future Starts with One Conversation</h2>
+<p class="font-body-lg text-primary-fixed-dim/80 mb-12 max-w-xl mx-auto">Don't leave your Ivy League dreams to chance. Get the professional guidance you need to stand out.</p>
+<a class="bg-secondary-fixed text-on-secondary-fixed px-10 py-5 rounded-full font-label-md text-label-md hover:bg-secondary transition-all duration-300 inline-block shadow-lg shadow-secondary/20" href="#booking">
+                            Book Free Consultation
+                        </a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="relative w-full py-section-gap bg-surface-container-lowest border-t border-outline-variant/30">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col gap-6">
+<a class="flex items-center gap-4" href="/"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNKrtM8VfSLYmUtRMOqSu6w_4UgYIeRn7Bu6gykHNc1_bMqHVYW1EA0LgcE9OXpsboZ_hx3r63BIs2X07infe_mBAG0n74EQTIWVjrQ5LQEvji1kcQWHydD0KqW9Oq7BPK536seekChwsbS8VhF4_lQsMm4VJy1CSJDQGPBIC-t2hkp15plysiLtC2fbWnlnIeA3CVqxI1h2zyn9wQOZBsWcMdqzIVuqhW1uiEQNuNfD8zHj72SqKrG8u77N5-1z4Vyvk" alt="Edcentris Logo" class="h-10 w-auto"><span class="font-headline-md text-headline-md font-bold text-primary">Edcentris</span></a>
+<p class="font-caption text-caption text-on-surface-variant">Empowering scholars through editorial-grade precision and elite mentorship.</p>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-6">Programs</h4>
+<ul class="space-y-3">
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Ivy Elite Prep</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Scholarship Finder</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">SAT/ACT Mastery</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-6">Resources</h4>
+<ul class="space-y-3">
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Resource Library</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Success Stories</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Blog</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-6">Contact</h4>
+<ul class="space-y-3">
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">admissions@ivyedge.edu</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-section-gap border-t border-outline-variant/20 pt-8 px-margin-desktop max-w-container-max mx-auto text-center">
+<p class="font-caption text-caption text-on-surface-variant opacity-60">© 2024 Edcentris Consulting. All rights reserved. Built for the next generation of global scholars.</p>
+</div>
+</footer>
+<script>
+        // Smooth reveal on scroll interaction
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.bento-card').forEach(card => {
+            card.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
+            observer.observe(card);
+        });
+    </script>
+
+
+</body></html>
