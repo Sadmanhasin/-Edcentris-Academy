@@ -195,19 +195,20 @@
 </div>
 <div>
 <p class="font-label-md text-caption text-on-surface-variant uppercase">Full Scholarship</p>
-<p class="font-headline-md text-body-lg font-bold text-primary">$100k+ Awarded</p>
+<p class="font-headline-md text-body-lg font-bold text-primary" id="hero-student-scholarship">$100k+ Awarded</p>
 </div>
 </div>
 </div>
-<div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-80 h-96 rounded-3xl overflow-hidden shadow-2xl z-20 border-4 border-white">
-<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a confident young Bangladeshi student smiling, wearing a smart casual blazer, standing against a clean, soft white background. The lighting is editorial and warm, signifying academic success and leadership potential. The high-resolution image captures a sense of elite intellectual capability and friendliness, perfectly suited for a premium educational consultancy brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyb_zfQVgmtk4ADuJHLI_4wlN0k6CAyVA8NikaWOxHjicEQVXCFJnOM0dAsiNywMA_ozJoK7lF-BfkwXPNAKy2uZEu8J9mRlWJcgM4eFfU4CmkWHaYlbMvfqHL5YkCIT67rtrS46y8VPhFLarNvtshqcYw6MCU_oWfI_5SFJlnAx5xeprAQ1q-hT8a9OHHC626OqleqCM33QfVtFq4qvbVLM-Kz0LP_cP55fKDeWT9AfpGiI9VW_3Qgw"/>
+<div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-80 h-96 rounded-3xl overflow-hidden shadow-2xl z-20 border-4 border-white" id="hero-student-slideshow">
+<img alt="Harvard University student portrait" class="absolute inset-0 w-full h-full object-cover" id="hero-student-image-a" src="https://i.pravatar.cc/640?img=12" style="opacity: 1; transform: translateX(0); transition: opacity 800ms cubic-bezier(0.4, 0, 0.2, 1), transform 800ms cubic-bezier(0.4, 0, 0.2, 1); will-change: opacity, transform;">
+<img alt="Harvard University student portrait" class="absolute inset-0 w-full h-full object-cover" id="hero-student-image-b" src="https://i.pravatar.cc/640?img=12" style="opacity: 0; transform: translateX(14px); transition: opacity 800ms cubic-bezier(0.4, 0, 0.2, 1), transform 800ms cubic-bezier(0.4, 0, 0.2, 1); will-change: opacity, transform;">
 </div>
 <div class="absolute bottom-10 right-0 glass-card p-6 rounded-2xl shadow-2xl z-30 animate-pulse">
 <div class="flex items-center gap-4">
 <span class="material-symbols-outlined text-secondary text-4xl">school</span>
 <div>
-<p class="font-headline-md text-body-lg font-bold text-primary">Harvard University</p>
-<p class="font-label-md text-caption text-secondary">Class of 2028</p>
+<p class="font-headline-md text-body-lg font-bold text-primary" id="hero-student-university">Harvard University</p>
+<p class="font-label-md text-caption text-secondary" id="hero-student-year">Class of 2028</p>
 </div>
 </div>
 </div>
@@ -216,6 +217,77 @@
 <div class="absolute -bottom-20 left-0 w-64 h-64 bg-secondary-fixed/20 rounded-full blur-3xl -z-10"></div>
 </div>
 </div>
+<script>
+        (function () {
+            const students = [
+                { src: "https://i.pravatar.cc/640?img=12", university: "Harvard University", year: "Class of 2028", scholarship: "$100k+ Awarded", alt: "Harvard University student portrait" },
+                { src: "https://i.pravatar.cc/640?img=25", university: "University of Rochester", year: "Class of 2029", scholarship: "$82k Scholarship", alt: "University of Rochester student portrait" },
+                { src: "https://i.pravatar.cc/640?img=32", university: "Colgate University", year: "Class of 2028", scholarship: "$76k Scholarship", alt: "Colgate University student portrait" },
+                { src: "https://i.pravatar.cc/640?img=41", university: "Bucknell University", year: "Class of 2029", scholarship: "$68k Awarded", alt: "Bucknell University student portrait" },
+                { src: "https://i.pravatar.cc/640?img=48", university: "Denison University", year: "Class of 2028", scholarship: "$72k Scholarship", alt: "Denison University student portrait" },
+                { src: "https://i.pravatar.cc/640?img=56", university: "Whitman College", year: "Class of 2029", scholarship: "$65k Scholarship", alt: "Whitman College student portrait" }
+            ];
+
+            const container = document.getElementById("hero-student-slideshow");
+            const imageA = document.getElementById("hero-student-image-a");
+            const imageB = document.getElementById("hero-student-image-b");
+            const university = document.getElementById("hero-student-university");
+            const year = document.getElementById("hero-student-year");
+            const scholarship = document.getElementById("hero-student-scholarship");
+
+            if (!container || !imageA || !imageB || !university || !year || !scholarship) {
+                return;
+            }
+
+            students.forEach(function (student) {
+                const preload = new Image();
+                preload.src = student.src;
+            });
+
+            let currentIndex = 0;
+            let showingA = true;
+            let paused = false;
+
+            container.addEventListener("mouseenter", function () {
+                paused = true;
+            });
+            container.addEventListener("mouseleave", function () {
+                paused = false;
+            });
+
+            function transitionToNextStudent() {
+                if (paused) {
+                    return;
+                }
+
+                const nextIndex = (currentIndex + 1) % students.length;
+                const nextStudent = students[nextIndex];
+                const outgoingImage = showingA ? imageA : imageB;
+                const incomingImage = showingA ? imageB : imageA;
+
+                incomingImage.src = nextStudent.src;
+                incomingImage.alt = nextStudent.alt;
+                incomingImage.style.opacity = "0";
+                incomingImage.style.transform = "translateX(14px)";
+
+                university.textContent = nextStudent.university;
+                year.textContent = nextStudent.year;
+                scholarship.textContent = nextStudent.scholarship;
+
+                requestAnimationFrame(function () {
+                    incomingImage.style.opacity = "1";
+                    incomingImage.style.transform = "translateX(0)";
+                    outgoingImage.style.opacity = "0";
+                    outgoingImage.style.transform = "translateX(-14px)";
+                });
+
+                currentIndex = nextIndex;
+                showingA = !showingA;
+            }
+
+            setInterval(transitionToNextStudent, 3600);
+        })();
+    </script>
 </header>
 <!-- Social Proof Bar -->
 <section class="bg-surface-container-low py-12 border-y border-outline-variant/30">
